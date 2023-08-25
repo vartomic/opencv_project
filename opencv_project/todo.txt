@@ -1,0 +1,123 @@
+//1. Переменная cap(0) отвечает за камеру и при своем создании долго ее инициализирует
+//   Можно сделать ее статической, чтобы инициализация проходила только один раз 
+cv::Mat DataVideo::getData() {
+
+	cv::Mat frame;
+
+	//init videocamera				//!!!
+	static cv::VideoCapture cap(0);	//!!!
+
+	//check if not video
+	if (!cap.read(frame)) {
+		std::cout << "Video is missing" << std::endl;
+		return cv::Mat();
+	}
+	return frame;
+}
+
+//2. Для правильной работы виртуальных функций, у контроллера все переменные класса сделать указателями.
+//И инициализируем все указатели нулями
+class Controller {
+
+private:
+
+	Data* _data = 0;
+
+	//window object
+	ViewSrc* _controllerView1 = 0;
+
+	ViewSrc* _controllerView2 = 0;
+
+	Model* _model = 0;
+
+// Подправить функции установки тоже на указатели
+
+	void setView1(ViewSrc* view1);
+
+	void setView2(ViewSrc* view2);
+
+	void setData(Data* data);
+
+//3. Так как указатели теперь нулевые и пользователь может забыть их установить set функциями
+// добавляем проверки на ноль перед тем как их использовать
+
+	void Controller::work() {
+
+		cv::Mat frame;
+		if (_data != 0)				//проверка на ноль
+			frame = _data->getData();
+
+		//controller get img and window
+		if (_controllerView1 != 0)	//проверка на ноль
+			_controllerView1->showFrame(frame);
+
+		cv::Mat frameFromModel;
+		if (_model != 0)			//проверка на ноль
+			frameFromModel = _model->process(frame);
+
+		if (_controllerView2 != 0)	//проверка на ноль
+			_controllerView2->showFrame(frameFromModel);
+	}
+
+//4. Обработка клавиатуры. По ветке else if проверяем key
+
+	if ((key == tolower(81)) || (key == toupper(81)) || (key == 27)) {
+		(exit(0));
+	}
+	/*key переводим в нижний регистр и сравниваем с буквой 'p'*/
+	else if (tolower(key) == 'p') {
+		/*по кнопке 'p' устанавливаем в качесте источника данных фотку*/
+		controller.setData(&dataP);
+	}
+//доделать переключение controller.setData на видео dataV по кнопке 'v'
+//так как setData теперь просит указатель, используем & для получения указателя из обьекта
+//controller.setData(&dataP);	!!!
+
+//5. Так как камера и картинка имеют разное разрешение, то масштабирование на 40%
+// приведет к тому, что на экране будут окна разного размера
+// Исправим масштабирование ,чтобы задавался не процент масштабирования, 
+// а конкретное значение по ширине(например 800). Высоту рассчитаем из пропорции
+// Добавляем проверку на пустое изображение. Проверок много не бывает !!!
+	
+void ViewSrc::showFrame(cv::Mat frame) {
+	/*проверяем, что изображение не пустое*/
+	if (frame.empty()) {
+		return;
+	}
+
+	/*вычисляем соотношение сторон пришедшего изображения*/
+	const float aspectYX = (float)frame.rows / frame.cols;
+	/*задаем ширину для вывода на экран*/
+	const int WidthResizedFrame = 800;
+	/*через соотношение сторон оригинального изображения */
+	/*получаем по заданной ширине необходимую высоту для вывода*/
+	const int HeightResizedFrame = aspectYX * WidthResizedFrame;
+
+	//resize image
+	cv::Mat resizeFrame;
+	cv::resize(frame, resizeFrame, cv::Size(WidthResizedFrame, HeightResizedFrame));
+
+	//Display window
+	cv::imshow(winName, resizeFrame);
+}
+
+//6. Задать контроллеру серую модель. Подправить классу серой модели public секцию для 
+// фукции process.
+
+//7.Чуть меняем функцию process у модели. 
+//Добавляем проверку на пустое изображение. Проверок много не бывает !!!
+//И заводим cv::Mat gray; Из за специфики cv::Mat, лучше заводить отдельные переменные
+//под измененные изображения
+
+cv::Mat GrayModel::process(cv::Mat frame) {
+
+	/*проверяем, что изображение не пустое*/
+	if (frame.empty()) {
+		return cv::Mat();
+	}
+
+	//image to grey color
+	cv::Mat gray;
+	cv::cvtColor(frame, gray, cv::COLOR_BGR2GRAY);
+	return gray;
+}
