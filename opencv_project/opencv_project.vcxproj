@@ -137,6 +137,7 @@
     <ClCompile Include="source\controller\controller.cpp" />
     <ClCompile Include="source\data\dataPhoto.cpp" />
     <ClCompile Include="source\data\dataVideo.cpp" />
+    <ClCompile Include="source\model\cannyModel.cpp" />
     <ClCompile Include="source\model\grayModel.cpp" />
     <ClCompile Include="source\view\viewSrc.cpp" />
   </ItemGroup>
@@ -148,6 +149,7 @@
     <ClInclude Include="header\data\data.h" />
     <ClInclude Include="header\data\dataPhoto.h" />
     <ClInclude Include="header\data\dataVideo.h" />
+    <ClInclude Include="header\model\cannyModel.h" />
     <ClInclude Include="header\model\grayModel.h" />
     <ClInclude Include="header\model\model.h" />
     <ClInclude Include="header\view\view.h" />

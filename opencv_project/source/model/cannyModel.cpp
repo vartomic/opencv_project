@@ -9,8 +9,6 @@ cv::Mat CannyModel::process(cv::Mat frame) {
 		return cv::Mat();
 	}
 
-	cv::Mat canny;
 
-	//image to grey color
-	cv::cvtColor(frame, gray, cv::COLOR_BGR2GRAY);
-	return gray;
+	return frame;
+}

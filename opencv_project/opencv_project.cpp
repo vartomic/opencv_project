@@ -8,6 +8,7 @@
 #include "view/viewSrc.h"
 #include "model/model.h"
 #include "model/grayModel.h"
+#include "model/cannyModel.h"
 
 int main(){
 
@@ -20,6 +21,8 @@ int main(){
 	DataVideo dataV;
 
 	GrayModel grayM;
+
+	CannyModel cannyM;
 
 	//create window1
 	ViewSrc windFirst("Test_window1", cv::WINDOW_AUTOSIZE);
@@ -39,8 +42,6 @@ int main(){
 	//send window2 to controller
 	controller.setView2(&windSecond);
 
-	controller.setModel(&grayM);
-
 	while (true) {
 
 		const int delay = 100;
@@ -58,6 +59,14 @@ int main(){
 		else if (tolower(key) == 'v') {
 			//sets model to video
 			controller.setData(&dataV);
+		}
+		else if (tolower(key) == 'c') {
+			//sets model to video
+			controller.setModel(&cannyM);
+		}
+		else if (tolower(key) == 'g') {
+			//sets model to video
+			controller.setModel(&grayM);
 		}
 		controller.work();
 	}
