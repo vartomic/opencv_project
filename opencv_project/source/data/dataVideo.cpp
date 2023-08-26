@@ -10,7 +10,7 @@ cv::Mat DataVideo::getData() {
 	cv::Mat frame;
 
 	//init videocamera
-	cv::VideoCapture cap(0);
+	static cv::VideoCapture cap(0);
 
 	//check if not video
 	if (!cap.read(frame)) {

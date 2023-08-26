@@ -30,6 +30,8 @@ int main(){
 	//create window2
 	ViewSrc windSecond("Test_window2", cv::WINDOW_AUTOSIZE);
 
+	windSecond.setTrackBar();
+
 	//send img to controller
 	controller.setData(&dataP);
 
@@ -61,11 +63,11 @@ int main(){
 			controller.setData(&dataV);
 		}
 		else if (tolower(key) == 'c') {
-			//sets model to video
+			//sets model to canny
 			controller.setModel(&cannyM);
 		}
 		else if (tolower(key) == 'g') {
-			//sets model to video
+			//sets model to gray
 			controller.setModel(&grayM);
 		}
 		controller.work();

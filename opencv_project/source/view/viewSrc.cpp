@@ -5,6 +5,10 @@
 
 #include "view/viewSrc.h"
 
+void ViewSrc::setTrackBar() {
+	cv::createTrackbar("Treckbar", winName, 0, 100);
+}
+
 void ViewSrc::showFrame(cv::Mat frame){
 
 	//check if frame is empty
