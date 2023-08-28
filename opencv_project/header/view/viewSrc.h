@@ -31,7 +31,7 @@ public:
 		cv::namedWindow(winName, flag);
 	}
 
-	void setTrackBar();
+	void setTrackBar(int* trackbar);
 
 	void showFrame(cv::Mat frame);
 

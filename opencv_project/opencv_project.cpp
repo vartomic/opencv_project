@@ -30,7 +30,7 @@ int main(){
 	//create window2
 	ViewSrc windSecond("Test_window2", cv::WINDOW_AUTOSIZE);
 
-	windSecond.setTrackBar();
+	//windSecond.setTrackBar();
 
 	//send img to controller
 	controller.setData(&dataP);

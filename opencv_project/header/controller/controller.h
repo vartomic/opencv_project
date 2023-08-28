@@ -21,6 +21,8 @@ private:
 
 	Model* _model = 0;
 
+	int treckbar;
+
 public:
 
 	Controller() {}
