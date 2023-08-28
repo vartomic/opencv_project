@@ -36,6 +36,9 @@
     <ClCompile Include="source\model\cannyModel.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="source\model\model.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\german-shepherd-dog.jpg">

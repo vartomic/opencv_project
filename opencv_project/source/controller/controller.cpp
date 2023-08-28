@@ -18,6 +18,14 @@ void Controller::setModel(Model* grayModel) {
 	_model = grayModel;
 }
 
+int* Controller::getPar1() {
+	return &_par1;
+}
+
+int* Controller::getPar2() {
+	return &_par2;
+}
+
 void Controller::work() {
 
 	cv::Mat frame;
@@ -35,6 +43,7 @@ void Controller::work() {
 
 	if (_model != 0)
 		//model to gray
+		_model->setParams(_par1, _par2);
 		frameFromModel = _model->process(frame);
 
 	if (_controllerView2 != 0)

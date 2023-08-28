@@ -4,8 +4,13 @@
 
 class Model {
 
+protected:
+	int _par1, _par2;
+
 public:
 	virtual cv::Mat process(cv::Mat frame) {
 		return frame;
 	}
+
+	void setParams(int par1, int par2);
 };

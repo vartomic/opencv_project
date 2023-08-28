@@ -139,6 +139,7 @@
     <ClCompile Include="source\data\dataVideo.cpp" />
     <ClCompile Include="source\model\cannyModel.cpp" />
     <ClCompile Include="source\model\grayModel.cpp" />
+    <ClCompile Include="source\model\model.cpp" />
     <ClCompile Include="source\view\viewSrc.cpp" />
   </ItemGroup>
   <ItemGroup>

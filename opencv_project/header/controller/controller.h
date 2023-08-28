@@ -21,7 +21,10 @@ private:
 
 	Model* _model = 0;
 
-	int treckbar;
+	int* trackbar;
+
+	int _par1 = 0;
+	int _par2 = 0;
 
 public:
 
@@ -35,6 +38,9 @@ public:
 	void setData(Data* data);
 
 	void setModel(Model* _model);
+
+	int* getPar1();
+	int* getPar2();
 
 	//controller starts
 	void work();
