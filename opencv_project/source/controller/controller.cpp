@@ -41,10 +41,11 @@ void Controller::work() {
 
 	cv::Mat frameFromModel;
 
-	if (_model != 0)
+	if (_model != 0) {
 		//model to gray
 		_model->setParams(_par1, _par2);
 		frameFromModel = _model->process(frame);
+	}
 
 	if (_controllerView2 != 0)
 		//gets frame in window

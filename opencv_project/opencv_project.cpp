@@ -45,6 +45,8 @@ int main(){
 	//send window2 to controller
 	controller.setView2(&windSecond);
 
+	controller.setModel(&grayM);
+
 	while (true) {
 
 		const int delay = 100;

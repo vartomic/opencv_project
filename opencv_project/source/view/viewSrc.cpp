@@ -6,7 +6,7 @@
 #include "view/viewSrc.h"
 
 void ViewSrc::setTrackbar(cv::String name, int* trackbar) {
-	cv::createTrackbar("Treckbar", winName, 0, 255);
+	cv::createTrackbar(name, winName, trackbar, 255);
 }
 
 void ViewSrc::showFrame(cv::Mat frame){
