@@ -18,5 +18,5 @@ cv::Mat CannyModel::process(cv::Mat frame) {
 
 	cv::Canny(gray, canny, _par1, _par2);
 
-	return frame;
+	return canny;
 }
