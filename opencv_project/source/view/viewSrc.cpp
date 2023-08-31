@@ -9,6 +9,10 @@ void ViewSrc::setTrackbar(cv::String name, int* trackbar) {
 	cv::createTrackbar(name, winName, trackbar, 255);
 }
 
+void ViewSrc::setMaxTrackbar(cv::String name, int* trackbar) {
+	cv::createTrackbar(name, winName, trackbar, 240);
+}
+
 void ViewSrc::showFrame(cv::Mat frame){
 
 	//check if frame is empty

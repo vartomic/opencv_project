@@ -7,6 +7,8 @@
 #include "view/viewSrc.h"
 #include "model/model.h"
 #include "model/grayModel.h"
+#include "model/cannyModel.h"
+#include "model/hsvModel.h"
 
 class Controller {
 

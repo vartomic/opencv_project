@@ -9,6 +9,7 @@
 #include "model/model.h"
 #include "model/grayModel.h"
 #include "model/cannyModel.h"
+#include "model/hsvModel.h"
 
 int main(){
 
@@ -23,6 +24,8 @@ int main(){
 	GrayModel grayM;
 
 	CannyModel cannyM;
+
+	HSVModel hsvM;
 
 	//create window1
 	ViewSrc windFirst("Test_window1", cv::WINDOW_AUTOSIZE);
@@ -74,8 +77,8 @@ int main(){
 			controller.setModel(&cannyM);
 		}
 		else if (tolower(key) == '3') {
-			//sets model to canny
-			controller.setModel(&cannyM);
+			//sets model to hsv
+			controller.setModel(&hsvM);
 		}
 		controller.work();
 	}
