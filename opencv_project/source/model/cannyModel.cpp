@@ -18,5 +18,11 @@ cv::Mat CannyModel::process(cv::Mat frame) {
 
 	cv::Canny(gray, canny, _par1, _par2);
 
-	return canny;
+	cv::cvtColor(canny, canny, cv::COLOR_GRAY2BGR);
+
+	//cv::Mat resImage = frame - canny;
+
+	cv::Mat resImage = frame + canny;
+
+	return resImage;
 }

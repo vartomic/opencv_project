@@ -73,6 +73,10 @@ int main(){
 			//sets model to canny
 			controller.setModel(&cannyM);
 		}
+		else if (tolower(key) == '3') {
+			//sets model to canny
+			controller.setModel(&cannyM);
+		}
 		controller.work();
 	}
 }
