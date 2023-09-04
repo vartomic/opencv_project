@@ -14,8 +14,8 @@ void Controller::setView2(ViewSrc* view2) {
 	_controllerView2 = view2;
 }
 
-void Controller::setModel(Model* grayModel) {
-	_model = grayModel;
+void Controller::setModel(Model* model) {
+	_model = model;
 }
 
 int* Controller::getPar1() {
