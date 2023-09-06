@@ -1,7 +1,7 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-#include "model/cannyModel.h"
+#include "model/canny_model.h"
 
 cv::Mat CannyModel::process(cv::Mat frame) {
 

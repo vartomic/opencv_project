@@ -3,14 +3,15 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui.hpp>
 
-#include "view/viewSrc.h"
+#include "view/view_src.h"
 
 void ViewSrc::setTrackbar(cv::String name, int* trackbar) {
 	cv::createTrackbar(name, winName, trackbar, 255);
 }
 
-void ViewSrc::setMaxTrackbar(cv::String name, int* trackbar) {
-	cv::createTrackbar(name, winName, trackbar, 240);
+void ViewSrc::setHSVtrackbar(cv::String name, int max, int pos) {
+	cv::setTrackbarMax(name, winName, max);
+	cv::setTrackbarPos(name, winName, pos);
 }
 
 void ViewSrc::showFrame(cv::Mat frame){

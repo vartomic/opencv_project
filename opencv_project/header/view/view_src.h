@@ -33,7 +33,7 @@ public:
 
 	void setTrackbar(cv::String name, int* trackbar);
 
-	void setMaxTrackbar(cv::String name, int* trackbar);
+	void setHSVtrackbar(cv::String name, int max, int pos);
 
 	void showFrame(cv::Mat frame);
 

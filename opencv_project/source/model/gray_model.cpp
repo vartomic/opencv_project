@@ -1,6 +1,6 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui.hpp>
-#include "model/grayModel.h"
+#include "model/gray_model.h"
 
 cv::Mat GrayModel::process(cv::Mat frame) {
 

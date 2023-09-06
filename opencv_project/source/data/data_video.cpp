@@ -2,7 +2,7 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/videoio.hpp>
 
-#include "data/dataVideo.h"
+#include "data/data_video.h"
 #include "data/data.h"
 
 cv::Mat DataVideo::getData() {

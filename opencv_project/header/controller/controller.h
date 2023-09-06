@@ -1,14 +1,14 @@
 #pragma once
 
 #include "data\data.h"
-#include "data\dataPhoto.h"
-#include "data\dataVideo.h"
+#include "data\data_photo.h"
+#include "data\data_video.h"
 #include "view/view.h"
-#include "view/viewSrc.h"
+#include "view/view_src.h"
 #include "model/model.h"
-#include "model/grayModel.h"
-#include "model/cannyModel.h"
-#include "model/hsvModel.h"
+#include "model/gray_model.h"
+#include "model/canny_model.h"
+#include "model/hsv_model.h"
 
 class Controller {
 
