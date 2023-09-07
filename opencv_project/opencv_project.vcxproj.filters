@@ -15,31 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\data\dataPhoto.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="source\view\viewSrc.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="opencv_project.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="source\controller\controller.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\data\dataVideo.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="source\model\grayModel.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="source\model\cannyModel.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="source\model\model.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="source\model\hsvModel.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="source\data\data_photo.cpp">
@@ -62,17 +44,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="img\german-shepherd-dog.jpg">
+    <Image Include="img\apple.jpg">
       <Filter>Файлы ресурсов</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="header\data\dataPhoto.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="header\view\viewSrc.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="header\view\view.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -82,19 +58,7 @@
     <ClInclude Include="header\controller\controller.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="header\data\dataVideo.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="header\model\grayModel.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="header\model\model.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="header\model\cannyModel.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="header\model\hsvModel.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="header\model\canny_model.h">
@@ -107,6 +71,12 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="header\view\view_src.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\data_photo.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\data_video.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

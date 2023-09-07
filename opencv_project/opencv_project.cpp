@@ -25,7 +25,7 @@ int main(){
 
 	CannyModel cannyM;
 
-	HSVModel hsvM;
+	HSVmodel hsvM;
 
 	//create window1
 	ViewSrc windFirst("Test_window1", cv::WINDOW_AUTOSIZE);

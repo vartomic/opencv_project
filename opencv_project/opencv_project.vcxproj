@@ -144,7 +144,7 @@
     <ClCompile Include="source\view\view_src.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="img\german-shepherd-dog.jpg" />
+    <Image Include="img\apple.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\controller\controller.h" />
