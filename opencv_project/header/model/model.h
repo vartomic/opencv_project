@@ -5,7 +5,7 @@
 class Model {
 
 protected:
-	int _par1, _par2;
+	int _par1, _par2, _par3;
 
 public:
 	virtual cv::Mat process(cv::Mat frame) {

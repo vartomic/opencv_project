@@ -14,6 +14,7 @@ cv::Mat HSVmodel::process(cv::Mat frame) {
 
 	cv::cvtColor(frame, hsvImage, cv::COLOR_BGR2HSV);
 
+	//trackbar1 from 0 to 240, pos = 100
 	int hue_from = _par1 - 25;
 	int hue_to = _par2 + 25;
 
@@ -23,23 +24,30 @@ cv::Mat HSVmodel::process(cv::Mat frame) {
 	//	return cv::Mat();
 	//}
 
-	//par1 = 60, par2 = 230
-
+	//trackbar2 from 0 to 240, pos = 240
 	int sat_from = _par1 - 25;
-	int sat_to = _par2 + 25;
+	int sat_to = _par2 + 50;
 
+	//brightness
 	int val_from = 30;
 	int val_to = 220;
 
 	cv::Mat rangeImage;
 
+	//Checks if array elements lie between the elements of two other arrays
+	/*hsvImage = inputArray, cv::Scalar(inputArray (upper bounds)),
+	cv::Scalar(inputArray(lower bounds)), rangeImage = outputArray*/
 	cv::inRange(hsvImage, cv::Scalar(hue_from, sat_from, val_from), 
 		cv::Scalar(hue_to, sat_to, val_to), rangeImage);
+
+	//третий трекбар
 
 	//cv::Mat dilateImage;
 
 	//cv::dilate(rangeImage, dilateImage, 
 	//	cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(25, 25)));
+
+	//cv::findContours(dilateImage, contours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
 
 	return rangeImage;
 }
