@@ -14,19 +14,19 @@ cv::Mat HSVmodel::process(cv::Mat frame) {
 
 	cv::cvtColor(frame, hsvImage, cv::COLOR_BGR2HSV);
 
-	//trackbar1 from 0 to 240, pos = 100
+	//trackbar1 from 0 to 240, pos = 100, range 75-125
 	int hue_from = _par1 - 25;
-	int hue_to = _par2 + 25;
+	int hue_to = _par1 + 25;
 
-	//проверку сделать нормально
 
-	//if (hue_from < 0 || hue_to > 240){
-	//	return cv::Mat();
-	//}
+	if (hue_from < 0 || hue_to > 240){
+		hue_from = 0;
+		hue_to > 240;
+	}
 
 	//trackbar2 from 0 to 240, pos = 240
-	int sat_from = _par1 - 25;
-	int sat_to = _par2 + 50;
+	int sat_from = _par2 - 25;
+	int sat_to = _par2 + 25;
 
 	//brightness
 	int val_from = 30;
@@ -42,12 +42,20 @@ cv::Mat HSVmodel::process(cv::Mat frame) {
 
 	//третий трекбар
 
-	//cv::Mat dilateImage;
+	cv::Mat dilateImage; 
+	cv::dilate(rangeImage, dilateImage, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(3, 3)));
 
-	//cv::dilate(rangeImage, dilateImage, 
-	//	cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(25, 25)));
+	//vector of vectors of points
+	std::vector<std::vector<cv::Point>> contours;
 
-	//cv::findContours(dilateImage, contours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
+	// finds outer contours, using only 4 corner points
+	cv::findContours(dilateImage, contours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
 
-	return rangeImage;
+	for (auto contour : contours) {
+
+		cv::Scalar color(0, 255, 0);
+		cv::drawContours(frame, contours, -1, color, cv::FILLED, 8);
+	}
+
+	return dilateImage;
 }
