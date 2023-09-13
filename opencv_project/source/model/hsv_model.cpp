@@ -17,8 +17,8 @@ cv::Mat HSVmodel::process(cv::Mat frame) {
 	//par1 = 165, par2 = 42
 
 	//trackbar1 from 0 to 240, pos = 100, range 75-125
-	int hue_from = _par1 - 25;
-	int hue_to = _par1 + 25;
+	int hue_from = _par1 - 15;
+	int hue_to = _par1 + 15;
 
 	if (hue_from < 0){
 		hue_from = 0;
@@ -28,8 +28,8 @@ cv::Mat HSVmodel::process(cv::Mat frame) {
 	}
 
 	//trackbar2 from 0 to 240, pos = 240
-	int sat_from = _par2 - 25;
-	int sat_to = _par2 + 25;
+	int sat_from = _par2 - 15;
+	int sat_to = _par2 + 15;
 
 	if (sat_from < 0) {
 		sat_from = 0;
@@ -39,8 +39,8 @@ cv::Mat HSVmodel::process(cv::Mat frame) {
 	}
 
 	//brightness
-	int val_from = 30;
-	int val_to = 220;
+	int val_from = 50;
+	int val_to = 200;
 
 	cv::Mat rangeImage;
 
@@ -54,7 +54,7 @@ cv::Mat HSVmodel::process(cv::Mat frame) {
 	//TickMeter
 
 	cv::Mat dilateImage; 
-	cv::dilate(rangeImage, dilateImage, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(50, 50)));
+	cv::dilate(rangeImage, dilateImage, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(25, 25)));
 
 	//vector of vectors of points
 	std::vector<std::vector<cv::Point>> contours;
@@ -65,12 +65,12 @@ cv::Mat HSVmodel::process(cv::Mat frame) {
 	cv::findContours(dilateImage, contours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
 
 	cv::Scalar green(0, 255, 0);
-
-	cv::Mat resImage;
+	cv::Scalar blue(255, 0, 0);
 
 	for (size_t i = 0; i < contours.size(); i++) {
-		cv::drawContours(frame, contours, i, green, 8, 8, hierarchy);
-		//cv::approxPolyDP(contours[i], approx, 10, true);
+		cv::drawContours(frame, contours, i, green, 2, 8, hierarchy);
+		cv::approxPolyDP(contours[i], approx, 10, true);
+		cv::polylines(frame, approx, true, blue, 1);
 		auto rect = cv::boundingRect(contours[i]);
 		cv::rectangle(frame, rect, cv::Scalar(0, 255, 0));
 	}

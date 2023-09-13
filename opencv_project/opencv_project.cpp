@@ -79,8 +79,8 @@ int main(){
 		}
 		else if (tolower(key) == '3') {
 			//sets model to hsv
-			windSecond.setHSVtrackbar("par1", /*max=*/240, /*pos=*/162);
-			windSecond.setHSVtrackbar("par2", /*max=*/240, /*pos=*/34);
+			windSecond.setHSVtrackbar("par1", /*max=*/240, /*pos=*/91);
+			windSecond.setHSVtrackbar("par2", /*max=*/240, /*pos=*/193);
 			controller.setModel(&hsvM);
 		}
 
