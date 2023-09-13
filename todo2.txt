@@ -1,0 +1,52 @@
+
+отдельная функция для обработки кнопок
+этот блок большой и будет и дальше расти. Так что выносим его в отдельную функцию в отдельный cpp
+
+            const int delay = 100;
+            //waits for pressing key for 100 milliseconds
+            int key = cv::waitKey(delay);
+
+            //exit if ESC, 'Q' or 'q' key is pressed
+            if ((key == tolower(81)) || (key == toupper(81)) || (key == 27)){
+                  (exit(0));
+            }                
+            else if (tolower(key) == 'p') {
+                  //sets model to photo
+                  controller.setData(&dataP);
+            }
+            else if (tolower(key) == 'v') {
+                  //sets model to video
+                  controller.setData(&dataV);
+            }
+            else if (tolower(key) == '1') {
+                  //sets model to gray
+                  controller.setModel(&grayM);
+            }
+            else if (tolower(key) == '2') {
+                  //sets model to canny
+                  controller.setModel(&cannyM);
+            }
+            else if (tolower(key) == '3') {
+                  //sets model to hsv
+                  //windSecond.setMaxTrackbar("par1", /*max=*/240, /*pos=*/100);
+                  //windSecond.setMaxTrackbar("par2", /*max=*/240, /*pos=*/100);
+                  controller.setModel(&hsvM);
+            }
+
+//у нас тут используется controller,даты, модели и windSecond
+//контроллер и windSecond можно передать по ссылке в параметах функции
+//для моделей можно создать вообще фабрику и по enum возращать соответсвующую модель
+Model* getModel(enum TypeModel type)
+//только в этой фабрике сами модельки нужно сделать статиками
+//и возвращать по типу указатель на соответсвующую модель
+//точно также можно и для даты создать фабрику и по enum возращать соответсвующую дату
+Data* getData(enum TypeData type)
+//и должно быть примерно так
+else if (tolower(key) == '1') {
+      //sets model to gray
+      controller.setModel( getModel(TypeGrayModel));
+}
+//можешь if else переделать в switch для разнообразия
+switch(tolower(key))
+//и останется только новую функцию вызвать в main
+
