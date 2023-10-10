@@ -135,12 +135,15 @@
   <ItemGroup>
     <ClCompile Include="opencv_project.cpp" />
     <ClCompile Include="source\controller\controller.cpp" />
+    <ClCompile Include="source\data\data_factory.cpp" />
     <ClCompile Include="source\data\data_photo.cpp" />
     <ClCompile Include="source\data\data_video.cpp" />
+    <ClCompile Include="source\key_processing.cpp" />
     <ClCompile Include="source\model\canny_model.cpp" />
     <ClCompile Include="source\model\gray_model.cpp" />
     <ClCompile Include="source\model\hsv_model.cpp" />
     <ClCompile Include="source\model\model.cpp" />
+    <ClCompile Include="source\model\model_factory.cpp" />
     <ClCompile Include="source\view\view_src.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -149,12 +152,15 @@
   <ItemGroup>
     <ClInclude Include="header\controller\controller.h" />
     <ClInclude Include="header\data\data.h" />
+    <ClInclude Include="header\data\data_factory.h" />
     <ClInclude Include="header\data\data_photo.h" />
     <ClInclude Include="header\data\data_video.h" />
+    <ClInclude Include="header\key_processing.h" />
     <ClInclude Include="header\model\canny_model.h" />
     <ClInclude Include="header\model\gray_model.h" />
     <ClInclude Include="header\model\hsv_model.h" />
     <ClInclude Include="header\model\model.h" />
+    <ClInclude Include="header\model\model_factory.h" />
     <ClInclude Include="header\view\view.h" />
     <ClInclude Include="header\view\view_src.h" />
   </ItemGroup>
