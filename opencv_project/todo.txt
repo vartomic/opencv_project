@@ -1,0 +1,36 @@
+#include "data/data_factory.h"
+#include "data/data_photo.h"
+#include "data/data_video.h"
+
+//фабрика
+Data* data_factory(TypeData type) {
+    //создать статический указатель на DataPhoto и инициализировать нулем
+    static DataPhoto* dataPhoto = 0;
+    //создать статический указатель на DataVideo и инициализировать нулем
+    //todo
+
+    //проверить тип аргумента type 
+    //если тип равен TypeDataPhoto, то проверить если указатель dataPhoto равно 0, 
+    // то выделить память под DataPhoto с помощью new DataPhoto()
+    //и вернуть указатель dataPhoto
+    //инчаче у нас тип TypeDataVideo
+    //проверить указатель dataVideo на 0, если ему еще не выделили память,
+    // то выделить помощью new DataVideo()
+    //и вернуть указатель dataVideo
+
+    return 0;
+}
+
+//так можно использовать нашу фабрику в keyProcess
+//else if (tolower(key) == 'p') {
+//    //get data photo from factory
+//    auto dataPhoto = data_factory(TypeDataPhoto);
+//    //sets data to controller
+//    controller.setData(dataPhoto);
+//}
+
+//или обьединить этовсе в одну строку
+//else if (tolower(key) == 'p') {
+//    //get data photo from factory and set it to controller
+//    controller.setData(data_factory(TypeDataPhoto));
+//}
