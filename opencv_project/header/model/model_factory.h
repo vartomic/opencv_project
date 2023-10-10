@@ -2,4 +2,4 @@
 
 #include "model/model.h"
 
-Model model_factory();
+Model* getModel(enum TypeModel type);

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "data\data.h"
+#include "data\data_factory.h"
 #include "data\data_photo.h"
 #include "data\data_video.h"
 #include "view/view.h"

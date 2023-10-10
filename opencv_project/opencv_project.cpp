@@ -50,10 +50,9 @@ int main(){
 	controller.setView2(&windSecond);
 
 	controller.setModel(&grayM);	
-
-	keyProcess(controller, windSecond);
 	
 	while (true) {
+		keyProcess(controller, windSecond);
 		controller.work();
 	}
 }
