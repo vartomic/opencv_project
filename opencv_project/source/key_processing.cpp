@@ -1,9 +1,6 @@
-#include "../header/key_processing.h" //так быть не должно
+#include "key_processing.h"
 #include "view/view.h"
 #include "view/view_src.h"
-
-enum class TypeData { TypeDataPhoto, TypeDataVideo };
-//using enum TypeData;
 
 void keyProcess(Controller& controller, ViewSrc& windSecond) {
 
@@ -17,25 +14,25 @@ void keyProcess(Controller& controller, ViewSrc& windSecond) {
     }
     else if (tolower(key) == 'p') {
         //sets data to controller
-        controller.setData(getData(TypeDataPhoto));
+        controller.setData(getData(TypeData::TypeDataPhoto));
     }
     else if (tolower(key) == 'v') {
         //sets model to video
-        controller.setData(getData(TypeDataVideo));
+        controller.setData(getData(TypeData::TypeDataVideo));
     }
     else if (tolower(key) == '1') {
         //sets model to gray
-        controller.setModel(getModel(TypeGrayModel));
+        controller.setModel(getModel(TypeModel::TypeGrayModel));
     }
     else if (tolower(key) == '2') {
         //sets model to canny
-        controller.setModel(getModel(TypeCannyModel));
+        controller.setModel(getModel(TypeModel::TypeCannyModel));
     }
     else if (tolower(key) == '3') {
         //sets model to hsv
         windSecond.setHSVtrackbar("par1", /*max=*/240, /*pos=*/100);
         windSecond.setHSVtrackbar("par2", /*max=*/240, /*pos=*/100);
-        controller.setModel(getModel(TypeHSVModel));
+        controller.setModel(getModel(TypeModel::TypeHSVModel));
     }               
 }
 
