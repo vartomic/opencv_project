@@ -29,9 +29,10 @@ void keyProcess(Controller& controller, ViewSrc& windSecond) {
         controller.setModel(getModel(TypeModel::TypeCannyModel));
     }
     else if (tolower(key) == '3') {
-        //sets model to hsv
+        //creates trackbars
         windSecond.setHSVtrackbar("par1", /*max=*/240, /*pos=*/100);
         windSecond.setHSVtrackbar("par2", /*max=*/240, /*pos=*/100);
+        //sets model to hsv
         controller.setModel(getModel(TypeModel::TypeHSVModel));
     }               
 }

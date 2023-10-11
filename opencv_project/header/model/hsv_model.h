@@ -4,7 +4,7 @@
 #include <opencv2/highgui.hpp>
 #include "model/model.h"
 
-class HSVmodel: public Model {
+class HSVModel: public Model {
 
 public:
 	cv::Mat process(cv::Mat frame);

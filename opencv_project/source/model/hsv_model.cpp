@@ -3,7 +3,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include "model/hsv_model.h"
 
-cv::Mat HSVmodel::process(cv::Mat frame) {
+cv::Mat HSVModel::process(cv::Mat frame) {
 
 	//check if frame is empty
 	if (frame.empty()) {
