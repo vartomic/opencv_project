@@ -7,5 +7,5 @@
 class FaceDetectModel : public Model {
 
 	public:
-		void visualize(Mat& input, int frame, Mat& faces, double fps, int thickness = 2);
+		static void visualize(cv::Mat& input, int frame, cv::Mat& faces, double fps, int thickness = 2);
 };
