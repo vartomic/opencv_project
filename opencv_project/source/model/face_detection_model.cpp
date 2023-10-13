@@ -1,7 +1,7 @@
 #include "model/face_detection_model.h"
 
 //func visualize faces
-static void FaceDetectModel::visualize(cv::Mat & input, int frame, cv::Mat & faces, double fps, int thickness = 2){
+void FaceDetectModel::visualize(cv::Mat & input, int frame, cv::Mat & faces, double fps, int thickness){
     //fps to double
     std::string fpsString = cv::format("FPS : %.2f", (float)fps);
     //if frame >= 0
