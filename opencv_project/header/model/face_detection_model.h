@@ -8,7 +8,7 @@ class FaceDetectModel : public Model {
 
 	public:
 		//path to the model
-		std::string fd_modelPath = "./opencv_project/onnx";
+		std::string fd_modelPath = "./opencv_project/onnx/face_detection_yunet_2023mar.onnx";
 		//filter out faces of score < score_threshold
 		float scoreThreshold = 0.9;
 		//suppress bounding boxes >= nmsThreshold

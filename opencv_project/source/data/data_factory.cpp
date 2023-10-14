@@ -1,6 +1,6 @@
 #include "data/data_factory.h"
 
-Data* getData(enum TypeData type){
+Data* DataFactory::getData(enum TypeData type){
     //static pointer to photo = 0
     static DataPhoto *dataPhoto = 0;
     //static pointer to video = 0

@@ -2,7 +2,7 @@
 #include "view/view.h"
 #include "view/view_src.h"
 
-void keyProcess(Controller& controller, ViewSrc& windSecond) {
+void keyProcess(Controller &controller, DataFactory &data, ModelFactory &model, ViewSrc &windSecond) {
 
     const int delay = 100;
     //waits for pressing key for 100 milliseconds
@@ -14,30 +14,30 @@ void keyProcess(Controller& controller, ViewSrc& windSecond) {
     }
     else if (tolower(key) == 'p') {
         //sets data to controller
-        controller.setData(getData(TypeData::TypeDataPhoto));
+        controller.setData(data.getData(DataFactory::TypeData::TypeDataPhoto));
     }
     else if (tolower(key) == 'v') {
         //sets model to video
-        controller.setData(getData(TypeData::TypeDataVideo));
+        controller.setData(data.getData(DataFactory::TypeData::TypeDataVideo));
     }
     else if (tolower(key) == '1') {
         //sets model to gray
-        controller.setModel(getModel(TypeModel::TypeGrayModel));
+        controller.setModel(model.getModel(ModelFactory::TypeModel::TypeGrayModel));
     }
     else if (tolower(key) == '2') {
         //sets model to canny
-        controller.setModel(getModel(TypeModel::TypeCannyModel));
+        controller.setModel(model.getModel(ModelFactory::TypeModel::TypeCannyModel));
     }
     else if (tolower(key) == '3') {
         //creates trackbars
         windSecond.setHSVtrackbar("par1", /*max=*/240, /*pos=*/100);
         windSecond.setHSVtrackbar("par2", /*max=*/240, /*pos=*/100);
         //sets model to hsv
-        controller.setModel(getModel(TypeModel::TypeHSVModel));
+        controller.setModel(model.getModel(ModelFactory::TypeModel::TypeHSVModel));
     }        
     else if (tolower(key) == '4') {
         //sets model to face detection
-        controller.setModel(getModel(TypeModel::TypeFaceDetectModel));
+        controller.setModel(model.getModel(ModelFactory::TypeModel::TypeFaceDetectModel));
     }
 }
 
