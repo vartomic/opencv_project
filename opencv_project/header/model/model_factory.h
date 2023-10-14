@@ -6,7 +6,7 @@
 #include "model/hsv_model.h"
 
 //enum with types of models
-enum class TypeModel { TypeGrayModel, TypeCannyModel, TypeHSVModel };
+enum class TypeModel { TypeGrayModel, TypeCannyModel, TypeHSVModel, TypeFaceDetectModel };
 
 //func for getting specific type of model
 Model* getModel(enum TypeModel type);

@@ -34,6 +34,10 @@ void keyProcess(Controller& controller, ViewSrc& windSecond) {
         windSecond.setHSVtrackbar("par2", /*max=*/240, /*pos=*/100);
         //sets model to hsv
         controller.setModel(getModel(TypeModel::TypeHSVModel));
-    }               
+    }        
+    else if (tolower(key) == '4') {
+        //sets model to face detection
+        controller.setModel(getModel(TypeModel::TypeFaceDetectModel));
+    }
 }
 
