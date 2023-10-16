@@ -29,9 +29,6 @@ int main(){
 	windSecond.setTrackbar("par1", controller.getPar1());
 	windSecond.setTrackbar("par2", controller.getPar2());
 
-	//sends img to controller
-	controller.setData(data.getData(DataFactory::TypeData::TypeDataPhoto));
-
 	//sends video to controller
 	controller.setData(data.getData(DataFactory::TypeData::TypeDataVideo));
 
@@ -41,7 +38,7 @@ int main(){
 	//sends window2 to controller
 	controller.setView2(&windSecond);
 
-	controller.setModel(model.getModel(ModelFactory::TypeModel::TypeGrayModel));	
+	controller.setModel(model.getModel(ModelFactory::TypeModel::TypeFaceDetectModel));
 	
 	while (true) {
 		keyProcess(controller, data, model, windSecond);
