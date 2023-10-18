@@ -42,19 +42,25 @@ void FaceDetectModel::visualize(cv::Mat & input, int frame, cv::Mat & faces, dou
 
 cv::Mat FaceDetectModel::process(cv::Mat frame) {
 
+    //check if frame is empty
+    if (frame.empty()) {
+        return cv::Mat();
+    }
+
     cv::TickMeter tm;
 
     tm.start();
-
+  
+    cv::Mat image = frame.clone();
     // Set input size before inference
-    detector->setInputSize(frame.size());
+    detector->setInputSize(image.size());
 
     cv::Mat faces;
-    detector->detect(frame, faces);
+    detector->detect(image, faces);
 
     tm.stop();
     // Draw results on the input image
-    visualize(frame, -1, faces, tm.getFPS());
+    visualize(image, -1, faces, tm.getFPS(), 1);
 
-    return faces;
+    return image;
 }
