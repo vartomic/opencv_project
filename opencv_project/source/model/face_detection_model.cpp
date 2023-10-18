@@ -39,3 +39,22 @@ void FaceDetectModel::visualize(cv::Mat & input, int frame, cv::Mat & faces, dou
     //puts fps value on image
     putText(input, fpsString, cv::Point(0, 15), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0), 2);
 }
+
+cv::Mat FaceDetectModel::process(cv::Mat frame) {
+
+    cv::TickMeter tm;
+
+    tm.start();
+
+    // Set input size before inference
+    detector->setInputSize(frame.size());
+
+    cv::Mat faces;
+    detector->detect(frame, faces);
+
+    tm.stop();
+    // Draw results on the input image
+    visualize(frame, -1, faces, tm.getFPS());
+
+    return faces;
+}

@@ -32,7 +32,7 @@ void Controller::work() {
 
 	//check if data is 0
 	if (_data != 0)
-		//gets model
+		//gets data
 		frame = _data->getData();
 
 	//controller gets window
@@ -42,7 +42,7 @@ void Controller::work() {
 	cv::Mat frameFromModel;
 
 	if (_model != 0) {
-		//model to gray
+		//gets model
 		_model->setParams(_par1, _par2);
 		frameFromModel = _model->process(frame);
 	}

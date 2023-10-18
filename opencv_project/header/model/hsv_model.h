@@ -8,5 +8,4 @@ class HSVModel: public Model {
 
 public:
 	cv::Mat process(cv::Mat frame);
-
 };

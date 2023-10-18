@@ -51,7 +51,6 @@ cv::Mat HSVModel::process(cv::Mat frame) {
 		cv::Scalar(hue_to, sat_to, val_to), rangeImage);
 
 	//третий трекбар
-	//TickMeter
 
 	cv::Mat dilateImage; 
 	cv::dilate(rangeImage, dilateImage, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(25, 25)));
