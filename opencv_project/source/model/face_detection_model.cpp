@@ -60,7 +60,7 @@ cv::Mat FaceDetectModel::process(cv::Mat frame) {
 
     tm.stop();
     // Draw results on the input image
-    visualize(image, -1, faces, tm.getFPS(), 1);
+    visualize(image, -1, faces, tm.getFPS());
 
     return image;
 }
