@@ -9,6 +9,8 @@ Model* ModelFactory::getModel(enum TypeModel type) {
     static HSVModel *hsvModel = 0;
     //static pointer to face detection model = 0
     static FaceDetectModel* faceDetectModel = 0;
+    //static pointer to haar model = 0
+    static HaarModel* haarModel = 0;
 
     //if type of model = gray model
     if (type == TypeModel::TypeGrayModel) {
@@ -49,6 +51,16 @@ Model* ModelFactory::getModel(enum TypeModel type) {
         }
         //return face detection model
         return faceDetectModel;
+    }
+    //if type of model = haar model
+    else if (type == TypeModel::TypeHaarModel) {
+        //if pointer to haar model = 0
+        if (haarModel == nullptr) {
+            //allocate memory for new haar model
+            haarModel = new HaarModel();
+        }
+        //return haar model
+        return haarModel;
     }
     return 0;
 }

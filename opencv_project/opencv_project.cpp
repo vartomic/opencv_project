@@ -38,7 +38,7 @@ int main(){
 	//sends window2 to controller
 	controller.setView2(&windSecond);
 
-	controller.setModel(model.getModel(ModelFactory::TypeModel::TypeFaceDetectModel));
+	controller.setModel(model.getModel(ModelFactory::TypeModel::TypeHaarModel));
 	
 	while (true) {
 		keyProcess(controller, data, model, windSecond);

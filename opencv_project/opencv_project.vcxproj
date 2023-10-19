@@ -142,6 +142,7 @@
     <ClCompile Include="source\model\canny_model.cpp" />
     <ClCompile Include="source\model\face_detection_model.cpp" />
     <ClCompile Include="source\model\gray_model.cpp" />
+    <ClCompile Include="source\model\haar_model.cpp" />
     <ClCompile Include="source\model\hsv_model.cpp" />
     <ClCompile Include="source\model\model.cpp" />
     <ClCompile Include="source\model\model_factory.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="header\model\canny_model.h" />
     <ClInclude Include="header\model\face_detection_model.h" />
     <ClInclude Include="header\model\gray_model.h" />
+    <ClInclude Include="header\model\haar_model.h" />
     <ClInclude Include="header\model\hsv_model.h" />
     <ClInclude Include="header\model\model.h" />
     <ClInclude Include="header\model\model_factory.h" />

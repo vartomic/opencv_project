@@ -39,5 +39,9 @@ void keyProcess(Controller &controller, DataFactory &data, ModelFactory &model, 
         //sets model to face detection
         controller.setModel(model.getModel(ModelFactory::TypeModel::TypeFaceDetectModel));
     }
+    else if (tolower(key) == '5') {
+        //sets model to face detection
+        controller.setModel(model.getModel(ModelFactory::TypeModel::TypeHaarModel));
+    }
 }
 
