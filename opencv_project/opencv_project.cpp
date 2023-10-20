@@ -6,7 +6,7 @@
 #include "data/data_factory.h"
 #include "model/model.h"
 #include "model/model_factory.h"
-#include "model/face_detection_model.h"
+#include "model/dnn_model.h"
 #include "header/key_processing.h"
 
 int main(){

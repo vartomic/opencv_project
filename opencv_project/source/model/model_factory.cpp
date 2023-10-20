@@ -8,7 +8,7 @@ Model* ModelFactory::getModel(enum TypeModel type) {
     //static pointer to hsv model = 0
     static HSVModel *hsvModel = 0;
     //static pointer to face detection model = 0
-    static FaceDetectModel* faceDetectModel = 0;
+    static DNNModel* dnnModel = 0;
     //static pointer to haar model = 0
     static HaarModel* haarModel = 0;
 
@@ -43,14 +43,14 @@ Model* ModelFactory::getModel(enum TypeModel type) {
         return hsvModel;
     }
     //if type of model = hsv model
-    else if (type == TypeModel::TypeFaceDetectModel) {
+    else if (type == TypeModel::TypeDNNModel) {
         //if pointer to face detection model = 0
-        if (faceDetectModel == nullptr) {
+        if (dnnModel == nullptr) {
             //allocate memory for new face detection model
-            faceDetectModel = new FaceDetectModel();
+            dnnModel = new DNNModel();
         }
         //return face detection model
-        return faceDetectModel;
+        return dnnModel;
     }
     //if type of model = haar model
     else if (type == TypeModel::TypeHaarModel) {

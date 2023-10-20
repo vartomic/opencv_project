@@ -51,7 +51,7 @@
     <ClCompile Include="source\data\data_factory.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\model\face_detection_model.cpp">
+    <ClCompile Include="source\model\dnn_model.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="source\model\haar_model.cpp">
@@ -103,7 +103,7 @@
     <ClInclude Include="header\data\data_factory.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="header\model\face_detection_model.h">
+    <ClInclude Include="header\model\dnn_model.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="header\model\haar_model.h">

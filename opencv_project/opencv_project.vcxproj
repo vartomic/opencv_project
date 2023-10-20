@@ -140,7 +140,7 @@
     <ClCompile Include="source\data\data_video.cpp" />
     <ClCompile Include="source\key_processing.cpp" />
     <ClCompile Include="source\model\canny_model.cpp" />
-    <ClCompile Include="source\model\face_detection_model.cpp" />
+    <ClCompile Include="source\model\dnn_model.cpp" />
     <ClCompile Include="source\model\gray_model.cpp" />
     <ClCompile Include="source\model\haar_model.cpp" />
     <ClCompile Include="source\model\hsv_model.cpp" />
@@ -159,7 +159,7 @@
     <ClInclude Include="header\data\data_video.h" />
     <ClInclude Include="header\key_processing.h" />
     <ClInclude Include="header\model\canny_model.h" />
-    <ClInclude Include="header\model\face_detection_model.h" />
+    <ClInclude Include="header\model\dnn_model.h" />
     <ClInclude Include="header\model\gray_model.h" />
     <ClInclude Include="header\model\haar_model.h" />
     <ClInclude Include="header\model\hsv_model.h" />
