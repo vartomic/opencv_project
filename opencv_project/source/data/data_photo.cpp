@@ -10,7 +10,7 @@
 cv::Mat DataPhoto::getData() {
 
 	//Read img
-	static cv::Mat img = cv::imread("img/apple.jpg");
+	static cv::Mat img = cv::imread("img/z_96977774.jpg");
 
 	//check if not img
 	if (!img.data)
