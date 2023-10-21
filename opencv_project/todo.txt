@@ -1,36 +1,21 @@
-#include "data/data_factory.h"
-#include "data/data_photo.h"
-#include "data/data_video.h"
+scale РЅРµ РЅСѓР¶РµРЅ РёСЃРєР»СЋС‡РёС‚СЊ РёР· С„РѕСЂРјСѓР», СЃС‡РёС‚Р°РµРј РјР°СЃС€С‚Р°Р± СЂР°РІРЅС‹Рј 1
+resize СѓР±РёСЂР°РµРј
+tryflip СѓР±РёСЂР°РµРј РІРµСЃСЊ Р±Р»РѕРє РєРѕРґР° СЃ РЅРёРј
+nestedCascade СѓР±РёСЂР°РµРј, СЌС‚Рѕ РїРѕРёСЃРє РІРЅСѓС‚СЂРё СѓР¶Рµ РЅР°Р№РґРµРЅРЅРѕРіРѕ Р»РёС†Р° РґСЂСѓРіРёС… РѕР±СЊРµРєС‚РѕРІ
+getTickCount СѓР±РёСЂР°РµРј
+РІСЃРµ Р»РёС€РЅРёРµ РїРµСЂРµРјРµРЅРЅС‹Рµ СѓР±СЂР°С‚СЊ СѓР±СЂР°С‚СЊ
 
-//фабрика
-Data* data_factory(TypeData type) {
-    //создать статический указатель на DataPhoto и инициализировать нулем
-    static DataPhoto* dataPhoto = 0;
-    //создать статический указатель на DataVideo и инициализировать нулем
-    //todo
+СЂР°Р·РґРµР»СЏРµРј РєРѕРґ РІ РґРІРµ С„СѓРЅРєС†РёРё
 
-    //проверить тип аргумента type 
-    //если тип равен TypeDataPhoto, то проверить если указатель dataPhoto равно 0, 
-    // то выделить память под DataPhoto с помощью new DataPhoto()
-    //и вернуть указатель dataPhoto
-    //инчаче у нас тип TypeDataVideo
-    //проверить указатель dataVideo на 0, если ему еще не выделили память,
-    // то выделить помощью new DataVideo()
-    //и вернуть указатель dataVideo
+1->detect(cv::Mat& image, std::vector<cv::Rect>& faces)
+С‚СѓС‚ Р±СѓРґСѓС‚
+cvtColor(image, gray, cv::COLOR_BGR2GRAY);
+equalizeHist(gray, gray);
+detectMultiScale
+detect С„СѓРЅРєС†РёСЏ Р±СѓРґРµС‚ Р·Р°РјРµСЂСЏС‚СЊСЃСЏ TickMeter
 
-    return 0;
-}
+2->visualize(cv::Mat& image, std::vector<cv::Rect>& faces, double fps)
+С‚СѓС‚ РѕС‚СЂРёСЃРѕРІРєР° Р»РёС† Рё РґРѕР±Р°РІРёС‚СЊ РѕС‚СЂРёСЃРѕРІРєСѓ fps
+РѕС‚СЂРёСЃРѕРІРєСѓ Р»РёС† СЃРґРµР»Р°С‚СЊ РїСЂСЏРјРѕСѓРіРѕР»РЅРёРєРѕРј РїСЂРѕСЃС‚Рѕ РѕРґРЅРёРј С†РІРµС‚РѕРј С‡РµСЂРµР· cv::rectangle
 
-//так можно использовать нашу фабрику в keyProcess
-//else if (tolower(key) == 'p') {
-//    //get data photo from factory
-//    auto dataPhoto = data_factory(TypeDataPhoto);
-//    //sets data to controller
-//    controller.setData(dataPhoto);
-//}
-
-//или обьединить этовсе в одну строку
-//else if (tolower(key) == 'p') {
-//    //get data photo from factory and set it to controller
-//    controller.setData(data_factory(TypeDataPhoto));
-//}
+РѕС‚РєРѕРјРјРµРЅС‚РёСЂРѕРІР°С‚СЊ РІСЃРµ РїРѕРґСЂСЏРґ
