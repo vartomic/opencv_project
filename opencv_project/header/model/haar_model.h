@@ -7,19 +7,15 @@
 class HaarModel : public Model {
 
 	public:
-
-		cv::CascadeClassifier cascade, nestedCascade;
+		//
+		cv::CascadeClassifier cascade;
 
 		//добавить переключение каскадов
 
 		//cascade path name
 		std::string cascadeName = "./haarcascades/haarcascade_frontalface_alt.xml";
-		//nested cascade path name
-		std::string nestedCascadeName = "./haarcascades/haarcascade_eye_tree_eyeglasses.xml";
 		//
-		double scale = 1;
-		//
-		bool tryflip = true;
+		std::vector<cv::Rect> faces;
 		//constructor
 		HaarModel() {
 			if (!cascade.load(cascadeName))
@@ -27,9 +23,9 @@ class HaarModel : public Model {
 				std::cerr << "ERROR: Could not load classifier cascade" << std::endl;
 			}
 		}
-		//visualize model
-		void visualize(cv::Mat& img, cv::CascadeClassifier& cascade, cv::CascadeClassifier& nestedCascade,
-			double scale, bool tryflip);
-
+		//detect facess
+		void detect(cv::Mat& image, std::vector<cv::Rect>& faces);
+		//visualizes model
+		void visualize(cv::Mat& image, std::vector<cv::Rect>& faces, double fps);
 		cv::Mat process(cv::Mat frame);
 };

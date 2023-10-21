@@ -1,7 +1,7 @@
 #include "model/dnn_model.h"
 
 void DNNModel::visualize(cv::Mat & input, int frame, cv::Mat & faces, double fps, int thickness){
-    //fps to double
+    //fps to float
     std::string fpsString = cv::format("FPS : %.2f", (float)fps);
 
     /*int width = input.size().width;
