@@ -64,14 +64,14 @@ cv::Mat DNNModel::process(cv::Mat frame) {
     tm.start();
   
     cv::Mat image = frame.clone();
-    // Set input size before inference
+    //Set input size before inference
     detector->setInputSize(image.size());
 
     cv::Mat faces;
     detector->detect(image, faces);
 
     tm.stop();
-    // Draw results on the input image
+    //Draws results on the input image
     visualize(image, -1, faces, tm.getFPS());
 
     return image;
