@@ -57,9 +57,24 @@
     <ClCompile Include="source\model\haar_model.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="source\model\mtcnn_model.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\apple.jpg">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="mtcnn\data\2007_007763.jpg">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="mtcnn\data\2007_007763_result.jpg">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="mtcnn\data\Aaron_Peirsol_0003.jpg">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="mtcnn\data\dogs.jpg">
       <Filter>Файлы ресурсов</Filter>
     </Image>
   </ItemGroup>
@@ -109,5 +124,52 @@
     <ClInclude Include="header\model\haar_model.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="header\model\mtcnn_model.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\include\mtcnn\detector.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\include\mtcnn\face.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\include\mtcnn\helpers.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\include\mtcnn\onet.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\include\mtcnn\pnet.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\include\mtcnn\rnet.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\include\detector.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\include\face.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\include\helpers.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\include\onet.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\include\pnet.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\include\rnet.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cmake\OpenCVConfig.cmake" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="mtcnn\sample\CMakeLists.txt" />
+    <Text Include="mtcnn\CMakeLists.txt" />
+    <Text Include="mtcnn\lib\CMakeLists.txt" />
   </ItemGroup>
 </Project>

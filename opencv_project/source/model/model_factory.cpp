@@ -11,6 +11,8 @@ Model* ModelFactory::getModel(enum TypeModel type) {
     static DNNModel* dnnModel = 0;
     //static pointer to haar model = 0
     static HaarModel* haarModel = 0;
+    //static pointer to mtcnn model = 0
+    static MTCNNModel* mtcnnModel = 0;
 
     //if type of model = gray model
     if (type == TypeModel::TypeGrayModel) {
@@ -61,6 +63,16 @@ Model* ModelFactory::getModel(enum TypeModel type) {
         }
         //return haar model
         return haarModel;
+    }
+    //if type of model = mtcnn model
+    else if (type == TypeModel::TypeMTCNNModel) {
+        //if pointer to mtcnn model = 0
+        if (mtcnnModel == nullptr) {
+            //allocate memory for new mtcnn model
+            mtcnnModel = new MTCNNModel();
+        }
+        //return mtcnn model
+        return mtcnnModel;
     }
     return 0;
 }

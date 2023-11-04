@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -18,35 +18,50 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\detector.cc" />
+    <ClCompile Include="src\onet.cc" />
+    <ClCompile Include="src\pnet.cc" />
+    <ClCompile Include="src\rnet.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\mtcnn\detector.h" />
+    <ClInclude Include="include\mtcnn\face.h" />
+    <ClInclude Include="include\mtcnn\helpers.h" />
+    <ClInclude Include="include\mtcnn\onet.h" />
+    <ClInclude Include="include\mtcnn\pnet.h" />
+    <ClInclude Include="include\mtcnn\rnet.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{BC9AEF3F-828F-45E7-A8E5-4BC9FEFD2580}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5800e134-819a-4158-892d-fff86fc7b5aa}</ProjectGuid>
-    <RootNamespace>opencvproject</RootNamespace>
+    <RootNamespace>librender</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>lib_mtcnn</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -70,131 +85,88 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\opencv\build\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\opencv\build\x64\vc16\lib;$(LibraryPath)</LibraryPath>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;MYAPP_GL_ES2_;MYAPP_GL_SHADER_;_WINDOWS;_USRDLL;_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>header</AdditionalIncludeDirectories>
+      <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;LIBRENDER_EXPORTS;_WINDOWS;_USRDLL;_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;LIBRENDER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>header;header/exports</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>header;mtcnn/lib;C:\boost_1_83_0</AdditionalIncludeDirectories>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opencv_world481d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\boost_1_83_0\stage\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;LIBRENDER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="opencv_project.cpp" />
-    <ClCompile Include="source\controller\controller.cpp" />
-    <ClCompile Include="source\data\data_factory.cpp" />
-    <ClCompile Include="source\data\data_photo.cpp" />
-    <ClCompile Include="source\data\data_video.cpp" />
-    <ClCompile Include="source\key_processing.cpp" />
-    <ClCompile Include="source\model\canny_model.cpp" />
-    <ClCompile Include="source\model\dnn_model.cpp" />
-    <ClCompile Include="source\model\gray_model.cpp" />
-    <ClCompile Include="source\model\haar_model.cpp" />
-    <ClCompile Include="source\model\hsv_model.cpp" />
-    <ClCompile Include="source\model\model.cpp" />
-    <ClCompile Include="source\model\model_factory.cpp" />
-    <ClCompile Include="source\model\mtcnn_model.cpp" />
-    <ClCompile Include="source\view\view_src.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="img\apple.jpg" />
-    <Image Include="mtcnn\data\2007_007763.jpg" />
-    <Image Include="mtcnn\data\2007_007763_result.jpg" />
-    <Image Include="mtcnn\data\Aaron_Peirsol_0003.jpg" />
-    <Image Include="mtcnn\data\dogs.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="header\controller\controller.h" />
-    <ClInclude Include="header\data\data.h" />
-    <ClInclude Include="header\data\data_factory.h" />
-    <ClInclude Include="header\data\data_photo.h" />
-    <ClInclude Include="header\data\data_video.h" />
-    <ClInclude Include="header\key_processing.h" />
-    <ClInclude Include="header\model\canny_model.h" />
-    <ClInclude Include="header\model\dnn_model.h" />
-    <ClInclude Include="header\model\gray_model.h" />
-    <ClInclude Include="header\model\haar_model.h" />
-    <ClInclude Include="header\model\hsv_model.h" />
-    <ClInclude Include="header\model\model.h" />
-    <ClInclude Include="header\model\model_factory.h" />
-    <ClInclude Include="header\model\mtcnn_model.h" />
-    <ClInclude Include="header\view\view.h" />
-    <ClInclude Include="header\view\view_src.h" />
-    <ClInclude Include="mtcnn\lib\include\detector.h" />
-    <ClInclude Include="mtcnn\lib\include\face.h" />
-    <ClInclude Include="mtcnn\lib\include\helpers.h" />
-    <ClInclude Include="mtcnn\lib\include\mtcnn\detector.h" />
-    <ClInclude Include="mtcnn\lib\include\mtcnn\face.h" />
-    <ClInclude Include="mtcnn\lib\include\mtcnn\helpers.h" />
-    <ClInclude Include="mtcnn\lib\include\mtcnn\onet.h" />
-    <ClInclude Include="mtcnn\lib\include\mtcnn\pnet.h" />
-    <ClInclude Include="mtcnn\lib\include\mtcnn\rnet.h" />
-    <ClInclude Include="mtcnn\lib\include\onet.h" />
-    <ClInclude Include="mtcnn\lib\include\pnet.h" />
-    <ClInclude Include="mtcnn\lib\include\rnet.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cmake\OpenCVConfig.cmake" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="mtcnn\CMakeLists.txt" />
-    <Text Include="mtcnn\lib\CMakeLists.txt" />
-    <Text Include="mtcnn\sample\CMakeLists.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

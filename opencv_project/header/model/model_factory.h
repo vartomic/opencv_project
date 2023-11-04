@@ -6,13 +6,14 @@
 #include "model/hsv_model.h"
 #include "model/dnn_model.h"
 #include "model/haar_model.h"
+#include "model/mtcnn_model.h"
 
 
 class ModelFactory {
 
 public:
 	//enum with types of models
-	enum class TypeModel { TypeGrayModel, TypeCannyModel, TypeHSVModel, TypeDNNModel, TypeHaarModel };
+	enum class TypeModel { TypeGrayModel, TypeCannyModel, TypeHSVModel, TypeDNNModel, TypeHaarModel, TypeMTCNNModel };
 
 	//func for getting specific type of model
 	Model* getModel(enum TypeModel type);

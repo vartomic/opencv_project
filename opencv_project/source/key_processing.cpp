@@ -43,5 +43,9 @@ void keyProcess(Controller &controller, DataFactory &data, ModelFactory &model, 
         //sets model to face detection
         controller.setModel(model.getModel(ModelFactory::TypeModel::TypeHaarModel));
     }
+    else if (tolower(key) == '6') {
+        //sets model to face detection
+        controller.setModel(model.getModel(ModelFactory::TypeModel::TypeMTCNNModel));
+    }
 }
 

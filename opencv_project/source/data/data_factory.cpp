@@ -13,6 +13,8 @@ Data* DataFactory::getData(enum TypeData type){
             //allocate memory for new photo
             dataPhoto = new DataPhoto();
         }
+        //pointer calls class function nextImage
+        dataPhoto->nextImage();
         //return photo
         return dataPhoto;
     }
