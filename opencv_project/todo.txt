@@ -1,0 +1,21 @@
+scale не нужен исключить из формул, считаем масштаб равным 1
+resize убираем
+tryflip убираем весь блок кода с ним
+nestedCascade убираем, это поиск внутри уже найденного лица других обьектов
+getTickCount убираем
+все лишние переменные убрать убрать
+
+разделяем код в две функции
+
+1->detect(cv::Mat& image, std::vector<cv::Rect>& faces)
+тут будут
+cvtColor(image, gray, cv::COLOR_BGR2GRAY);
+equalizeHist(gray, gray);
+detectMultiScale
+detect функция будет замеряться TickMeter
+
+2->visualize(cv::Mat& image, std::vector<cv::Rect>& faces, double fps)
+тут отрисовка лиц и добавить отрисовку fps
+отрисовку лиц сделать прямоуголником просто одним цветом через cv::rectangle
+
+откомментировать все подряд
