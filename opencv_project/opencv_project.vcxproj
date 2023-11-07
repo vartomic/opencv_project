@@ -108,7 +108,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>header;mtcnn/lib;C:\boost_1_83_0</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>header;mtcnn/lib;C:\boost_1_83_0;img/faces</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

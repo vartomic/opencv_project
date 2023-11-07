@@ -1,22 +1,18 @@
 #pragma once
-
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui.hpp>
-
 #include "data.h"
 #include "view\view.h"
 
 class DataPhoto: public Data {
-
-private:
+	//	Image object
 	cv::Mat _img;
-	cv::String _curImageIndex = 0;
+	//	Index of image
+	int _curImageIndex = 0;
 
 public:
-
-	//get img
+	//	Function returns image
 	cv::Mat getData();
-
-	cv::Mat nextImage();
-
+	//	Function reads path to image from array, then by pressing 'p' button changes image to the next
+	void nextImage();
 };

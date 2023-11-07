@@ -1,31 +1,31 @@
 #include "data/data_factory.h"
 
 Data* DataFactory::getData(enum TypeData type){
-    //static pointer to photo = 0
+    //  Static pointer to photo = 0
     static DataPhoto *dataPhoto = 0;
-    //static pointer to video = 0
+    //  Static pointer to video = 0
     static DataVideo *dataVideo = 0;
 
-    //if type of data = photo
+    //  If type of data = photo
     if (type == TypeData::TypeDataPhoto) {
-        //if pointer to photo = 0
+        //  If pointer to photo = 0
         if (dataPhoto == nullptr) {
-            //allocate memory for new photo
+            //  Allocate memory for new photo
             dataPhoto = new DataPhoto();
         }
-        //pointer calls class function nextImage
+        //  Pointer calls DataPhoto class function nextImage
         dataPhoto->nextImage();
-        //return photo
+        //  Returns photo
         return dataPhoto;
     }
-    //if type of data = video
+    //  If type of data = video
     else if (type == TypeData::TypeDataVideo){
-        //if pointer to video = 0
+        //  If pointer to video = 0
         if (dataVideo == nullptr){
-            //allocate memory for new photo
+            //  Allocate memory for new photo
             dataVideo = new DataVideo();
         }
-        //return video
+        //  Returns video
         return dataVideo;
     }
     return 0;

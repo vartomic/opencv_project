@@ -4,17 +4,12 @@
 #include <opencv2/highgui.hpp>
 
 class View {
-
-private:
-
-	//img object
+	//	image object
 	cv::Mat img;
 
 public:
-	
-	//default get img
+	//	virtual function returns photo or video data
 	virtual cv::Mat getData() {
 		return img;
 	}
-
 };

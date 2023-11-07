@@ -1,40 +1,29 @@
 #pragma once
-
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui.hpp>
 
 class ViewSrc {
-
-private:
-
-	//window name
+	//	Window name
 	std::string winName;
-
-	//window size
+	//	Window size
 	int winFlag;
 
 public:
-
-	//default constructor
+	//	Empty constructor
 	ViewSrc() {};
-
-	//constructor with window name and size param
+	//	Constructor with window name and window size as input arguments
 	ViewSrc(const std::string WinName, int flag) {
-
-		//window name
+		//	Class window name = function argument window name
 		winName = WinName;
-
-		//window size
+		//	Class window size = function argument window size
 		winFlag = flag;
-
-		//Create new window
-		cv::namedWindow(winName, flag);
+		//	Creates new window with window name and window size as function arguments
+		cv::namedWindow(winName, winFlag);
 	}
-
+	// Function creates the trackbar with the specified name and range and attaches it to the specified window
 	void setTrackbar(cv::String name, int* trackbar);
-
+	//	Function creates the trackbar, it's maximum and current position for the HSV model
 	void setHSVtrackbar(cv::String name, int max, int pos);
-
+	//	Resizes image up to or down to the specified size and displays it in a specified window
 	void showFrame(cv::Mat frame);
-
 };

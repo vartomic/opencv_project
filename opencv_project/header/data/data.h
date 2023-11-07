@@ -1,21 +1,15 @@
 #pragma once
-
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui.hpp>
 
 class Data {
-
-private:
-
-	//img object
+	//	Img object
 	cv::Mat img;
-
-	//video object
+	//	Video object
 	cv::VideoCapture vid;
 
 public:
-
-	//default get img
+	// Virtual function returns image
 	virtual cv::Mat getData() {
 		return img;
 	}

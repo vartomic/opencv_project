@@ -1,5 +1,4 @@
 #pragma once
-
 #include "data.h"
 #include "data/data_photo.h"
 #include "data/data_video.h"
@@ -7,10 +6,9 @@
 class DataFactory {
 
 public:
-	//enum with datatypes
+	//	Enum with datatypes
 	enum class TypeData { TypeDataPhoto, TypeDataVideo };
-
-	//func for getting specific type of data
+	//	Function returns pointer to datatype, that object of DataFactory class calls from main function
 	Data* getData(enum TypeData type);
 };
 

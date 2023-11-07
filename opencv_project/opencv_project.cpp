@@ -10,38 +10,37 @@
 #include "header/key_processing.h"
 
 int main(){
-
-	//create controller object
+	//	Controller object
 	Controller controller;
-
-	//creates data object
+	//	Data object
 	DataFactory data;
-
-	//creates model object
+	//	Model object
 	ModelFactory model;
-
-	//creates window
+	//	ViewSrc object creates new window
 	ViewSrc windFirst("Test_window1", cv::WINDOW_AUTOSIZE);
-
-	//creates window2
+	//	ViewSrc object creates new window
 	ViewSrc windSecond("Test_window2", cv::WINDOW_AUTOSIZE);
-
+	//	Controller object calls function getPar1(). 
+	// Model class sets values of slider current position from Controller class and Controller class returns link to slider values.
+	//	VieSrc object calls function setTrackbar(), with trackbar name and value of slider to create trackbar.
 	windSecond.setTrackbar("par1", controller.getPar1());
+	// Model class sets values of slider current position from Controller class and Controller class returns link to slider values.
+	//	VieSrc object calls function setTrackbar(), with trackbar name and value of slider to create trackbar.
 	windSecond.setTrackbar("par2", controller.getPar2());
-
-	//sends video to controller
+	//	Sends videoimage to controller
 	controller.setData(data.getData(DataFactory::TypeData::TypeDataVideo));
-
-	//sends window1 to controller
+	//	Sends window1 to controller
 	controller.setView1(&windFirst);
-	
-	//sends window2 to controller
+	//	Sends window2 to controller
 	controller.setView2(&windSecond);
-
+	//	Model class calls haar model from enum type and Controller class sets this model to its local variable
 	controller.setModel(model.getModel(ModelFactory::TypeModel::TypeHaarModel));
-	
+	//	Endless loop
 	while (true) {
+		//	Calls function keyProcess for chosing datatype and modeltype.
+		// Input parameters = objects of Controller, Data, Model and ViewSrc classes
 		keyProcess(controller, data, model, windSecond);
+		//	Controller class calls function work()
 		controller.work();
 	}
 }
