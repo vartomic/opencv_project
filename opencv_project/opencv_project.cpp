@@ -1,12 +1,9 @@
 ﻿#include <opencv2/opencv.hpp>
 #include <opencv2/highgui.hpp>
 #include "controller/controller.h"
-#include "view/view.h"
 #include "view/view_src.h"
 #include "data/data_factory.h"
-#include "model/model.h"
 #include "model/model_factory.h"
-#include "model/dnn_model.h"
 #include "header/key_processing.h"
 
 int main(){

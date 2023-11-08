@@ -1,9 +1,6 @@
-#pragma once
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui.hpp>
-#include "data/data.h"
 #include "data/data_photo.h"
-#include "view/view.h"
 
 cv::Mat DataPhoto::getData() {
 	return _img;

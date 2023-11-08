@@ -108,13 +108,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>header;mtcnn/lib;C:\boost_1_83_0;img/faces</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>header;mtcnn/lib;img/faces</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>opencv_world481d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\boost_1_83_0\stage\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -134,20 +135,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="mtcnn\lib\src\detector.cc" />
+    <ClCompile Include="mtcnn\lib\src\onet.cc" />
+    <ClCompile Include="mtcnn\lib\src\pnet.cc" />
+    <ClCompile Include="mtcnn\lib\src\rnet.cc" />
     <ClCompile Include="opencv_project.cpp" />
     <ClCompile Include="source\controller\controller.cpp" />
     <ClCompile Include="source\data\data_factory.cpp" />
     <ClCompile Include="source\data\data_photo.cpp" />
     <ClCompile Include="source\data\data_video.cpp" />
     <ClCompile Include="source\key_processing.cpp" />
-    <ClCompile Include="source\model\canny_model.cpp" />
-    <ClCompile Include="source\model\dnn_model.cpp" />
-    <ClCompile Include="source\model\gray_model.cpp" />
-    <ClCompile Include="source\model\haar_model.cpp" />
-    <ClCompile Include="source\model\hsv_model.cpp" />
+    <ClCompile Include="source\model\model_canny.cpp" />
+    <ClCompile Include="source\model\model_dnn.cpp" />
+    <ClCompile Include="source\model\model_gray.cpp" />
+    <ClCompile Include="source\model\model_haar.cpp" />
+    <ClCompile Include="source\model\model_hsv.cpp" />
     <ClCompile Include="source\model\model.cpp" />
     <ClCompile Include="source\model\model_factory.cpp" />
-    <ClCompile Include="source\model\mtcnn_model.cpp" />
+    <ClCompile Include="source\model\model_mtcnn.cpp" />
     <ClCompile Include="source\view\view_src.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -164,14 +169,14 @@
     <ClInclude Include="header\data\data_photo.h" />
     <ClInclude Include="header\data\data_video.h" />
     <ClInclude Include="header\key_processing.h" />
-    <ClInclude Include="header\model\canny_model.h" />
-    <ClInclude Include="header\model\dnn_model.h" />
-    <ClInclude Include="header\model\gray_model.h" />
-    <ClInclude Include="header\model\haar_model.h" />
-    <ClInclude Include="header\model\hsv_model.h" />
+    <ClInclude Include="header\model\model_canny.h" />
+    <ClInclude Include="header\model\model_dnn.h" />
+    <ClInclude Include="header\model\model_gray.h" />
+    <ClInclude Include="header\model\model_haar.h" />
+    <ClInclude Include="header\model\model_hsv.h" />
     <ClInclude Include="header\model\model.h" />
     <ClInclude Include="header\model\model_factory.h" />
-    <ClInclude Include="header\model\mtcnn_model.h" />
+    <ClInclude Include="header\model\model_mtcnn.h" />
     <ClInclude Include="header\view\view.h" />
     <ClInclude Include="header\view\view_src.h" />
     <ClInclude Include="mtcnn\lib\include\detector.h" />
@@ -186,9 +191,21 @@
     <ClInclude Include="mtcnn\lib\include\onet.h" />
     <ClInclude Include="mtcnn\lib\include\pnet.h" />
     <ClInclude Include="mtcnn\lib\include\rnet.h" />
+    <ClInclude Include="mtcnn\lib\mtcnn\detector.h" />
+    <ClInclude Include="mtcnn\lib\mtcnn\face.h" />
+    <ClInclude Include="mtcnn\lib\mtcnn\helpers.h" />
+    <ClInclude Include="mtcnn\lib\mtcnn\onet.h" />
+    <ClInclude Include="mtcnn\lib\mtcnn\pnet.h" />
+    <ClInclude Include="mtcnn\lib\mtcnn\rnet.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cmake\OpenCVConfig.cmake" />
+    <None Include="mtcnn\data\models\det1.caffemodel" />
+    <None Include="mtcnn\data\models\det1.prototxt" />
+    <None Include="mtcnn\data\models\det2.caffemodel" />
+    <None Include="mtcnn\data\models\det2.prototxt" />
+    <None Include="mtcnn\data\models\det3.caffemodel" />
+    <None Include="mtcnn\data\models\det3.prototxt" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="mtcnn\CMakeLists.txt" />

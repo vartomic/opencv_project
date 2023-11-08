@@ -4,13 +4,13 @@
 
 class Data {
 	//	Img object
-	cv::Mat img;
+	cv::Mat _img;
 	//	Video object
-	cv::VideoCapture vid;
+	cv::VideoCapture _vid;
 
 public:
 	// Virtual function returns image
 	virtual cv::Mat getData() {
-		return img;
+		return _img;
 	}
 };

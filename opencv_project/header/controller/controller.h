@@ -1,9 +1,10 @@
 #pragma once
-#include "data\data_factory.h"
+#include <opencv2/opencv.hpp>
+#include <opencv2/highgui.hpp>
+#include "data/data.h"
 #include "view/view.h"
 #include "view/view_src.h"
 #include "model/model.h"
-#include "model/model_factory.h"
 
 class Controller {
 	//	Pointer to photo or video data object
@@ -15,7 +16,7 @@ class Controller {
 	//	Pointer to model object
 	Model* _model = 0;
 	//	Pointer to trackbar
-	int* trackbar;
+	int* _trackbar;
 	//	Slider value in trackbar
 	int _par1 = 0;
 	//	Slider value in trackbar
@@ -35,7 +36,7 @@ public:
 	void setData(Data* data);
 	//	Function sets model object to controller. Input of function is pointer to model object from Model class, 
 	//	controller assigns it to model object in controller class
-	void setModel(Model* _model);
+	void setModel(Model* model);
 	//	Function returns link to slider parameter from Model class. Model class assigns slider its current value
 	int* getPar1();
 	//	Function returns link to slider parameter from Model class. Model class assigns slider its current value

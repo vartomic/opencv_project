@@ -1,18 +1,16 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui.hpp>
-#include "model/gray_model.h"
+#include "model/model_gray.h"
 
 cv::Mat GrayModel::process(cv::Mat frame) {
-
-	//check if frame is empty
+	//	Checks if frame is empty
 	if (frame.empty()) {
 		return cv::Mat();
 	}
-
 	cv::Mat gray;
-
-	//image to grey color
+	//	Converts input image to gray colorspace
 	cv::cvtColor(frame, gray, cv::COLOR_BGR2GRAY);
+	//	Returns gray image
 	return gray;
 }
 

@@ -1,6 +1,4 @@
 #include "key_processing.h"
-#include "view/view.h"
-#include "view/view_src.h"
 
 void keyProcess(Controller &controller, DataFactory &data, ModelFactory &model, ViewSrc &windSecond) {
     const int delay = 100;

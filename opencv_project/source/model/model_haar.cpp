@@ -1,4 +1,4 @@
-#include "model/haar_model.h"
+#include "model/model_haar.h"
 
 void HaarModel::detect(cv::Mat& image, std::vector<cv::Rect>& faces) {
 

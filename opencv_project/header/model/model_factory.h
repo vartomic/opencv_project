@@ -1,11 +1,11 @@
 #pragma once
 #include "model/model.h"
-#include "model/gray_model.h"
-#include "model/canny_model.h"
-#include "model/hsv_model.h"
-#include "model/dnn_model.h"
-#include "model/haar_model.h"
-#include "model/mtcnn_model.h"
+#include "model/model_gray.h"
+#include "model/model_canny.h"
+#include "model/model_hsv.h"
+#include "model/model_dnn.h"
+#include "model/model_haar.h"
+#include "model/model_mtcnn.h"
 
 class ModelFactory {
 

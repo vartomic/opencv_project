@@ -4,21 +4,21 @@
 
 class ViewSrc {
 	//	Window name
-	std::string winName;
+	std::string _winName;
 	//	Window size
-	int winFlag;
+	int _winFlag;
 
 public:
 	//	Empty constructor
 	ViewSrc() {};
 	//	Constructor with window name and window size as input arguments
-	ViewSrc(const std::string WinName, int flag) {
+	ViewSrc(const std::string winName, int flag) {
 		//	Class window name = function argument window name
-		winName = WinName;
+		_winName = winName;
 		//	Class window size = function argument window size
-		winFlag = flag;
+		_winFlag = flag;
 		//	Creates new window with window name and window size as function arguments
-		cv::namedWindow(winName, winFlag);
+		cv::namedWindow(_winName, _winFlag);
 	}
 	// Function creates the trackbar with the specified name and range and attaches it to the specified window
 	void setTrackbar(cv::String name, int* trackbar);

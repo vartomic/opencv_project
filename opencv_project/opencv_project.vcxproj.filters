@@ -30,13 +30,13 @@
     <ClCompile Include="source\data\data_video.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\model\canny_model.cpp">
+    <ClCompile Include="source\model\model_canny.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\model\gray_model.cpp">
+    <ClCompile Include="source\model\model_gray.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\model\hsv_model.cpp">
+    <ClCompile Include="source\model\model_hsv.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="source\view\view_src.cpp">
@@ -51,13 +51,13 @@
     <ClCompile Include="source\data\data_factory.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\model\dnn_model.cpp">
+    <ClCompile Include="source\model\model_dnn.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\model\haar_model.cpp">
+    <ClCompile Include="source\model\model_haar.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\model\mtcnn_model.cpp">
+    <ClCompile Include="source\model\model_mtcnn.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -91,13 +91,13 @@
     <ClInclude Include="header\model\model.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="header\model\canny_model.h">
+    <ClInclude Include="header\model\model_canny.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="header\model\gray_model.h">
+    <ClInclude Include="header\model\model_gray.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="header\model\hsv_model.h">
+    <ClInclude Include="header\model\model_hsv.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="header\view\view_src.h">
@@ -118,13 +118,10 @@
     <ClInclude Include="header\data\data_factory.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="header\model\dnn_model.h">
+    <ClInclude Include="header\model\model_dnn.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="header\model\haar_model.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="header\model\mtcnn_model.h">
+    <ClInclude Include="header\model\model_haar.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="mtcnn\lib\include\mtcnn\detector.h">
@@ -161,6 +158,27 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="mtcnn\lib\include\rnet.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\mtcnn\detector.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\mtcnn\face.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\mtcnn\helpers.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\mtcnn\onet.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\mtcnn\pnet.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="mtcnn\lib\mtcnn\rnet.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="header\model\model_mtcnn.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
