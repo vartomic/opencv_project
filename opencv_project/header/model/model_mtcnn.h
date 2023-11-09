@@ -4,14 +4,9 @@
 #include "model/model.h"
 #include <mtcnn/detector.h>
 
-using rectPoints = std::pair<cv::Rect, std::vector<cv::Point>>;
-
 class MTCNNModel: public Model {
 	//
 	MTCNNDetector *detector;
-	//
-	std::vector<Face> faces;
-	std::vector<rectPoints> data;
 	//
 	cv::String modelDir = "./mtcnn/data/models/";
 
@@ -34,7 +29,7 @@ public:
 	//	Destructor
 	~MTCNNModel() {};
 	//
-	void visualize(std::vector<Face>& faces, std::vector<rectPoints>& data);
+	void visualize(cv::Mat& image, std::vector<Face>& faces);
 	//
 	cv::Mat process(cv::Mat frame);
 };

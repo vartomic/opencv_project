@@ -1,16 +1,11 @@
 #include "model/model_mtcnn.h"
 
-void MTCNNModel::visualize(std::vector<Face>& faces, std::vector<rectPoints>& data) {
+void MTCNNModel::visualize(cv::Mat& image, std::vector<Face>& faces) {
     for (size_t i = 0; i < faces.size(); ++i) {
-        std::vector<cv::Point> pts;
-        for (int p = 0; p < NUM_PTS; ++p) {
-            pts.push_back(
-                cv::Point(faces[i].ptsCoords[2 * p], faces[i].ptsCoords[2 * p + 1]));
-        }
         auto rect = faces[i].bbox.getRect();
-        auto d = std::make_pair(rect, pts);
-        data.push_back(d);
-    }
+        //нарисовать прямоугольник, вывести частоту, разрешение
+        rectangle(image, rect, cv::Scalar(0, 0, 255));
+    }  
 }
 cv::Mat MTCNNModel::process(cv::Mat frame) {
     //  Checks if frame is empty
@@ -24,11 +19,11 @@ cv::Mat MTCNNModel::process(cv::Mat frame) {
     //  Creates clone of an input image
     cv::Mat image = frame.clone();
 
-    faces = detector->detect(image, 20.f, 0.709f);
+    auto faces = detector->detect(image, 20.f, 0.709f);
     //  Tickmeter stops
     tm.stop();
     //
-    visualize(faces, data);
+    visualize(image, faces);
     //
 	return image;
 }
