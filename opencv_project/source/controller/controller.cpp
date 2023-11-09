@@ -20,6 +20,9 @@ int* Controller::getPar1() {
 int* Controller::getPar2() {
 	return &_par2;
 }
+int* Controller::getPar3() {
+	return &_par3;
+}
 void Controller::work() {
 	cv::Mat frame;
 	//	If data is not 0
@@ -37,7 +40,7 @@ void Controller::work() {
 		//	Pointer to Model object of Controller class calls setParams function. 
 		// setParams() sends Controller class value of slider to Model class, Model class assignes them to itself
 		// and Controller class returns links of that values back.
-		_model->setParams(_par1, _par2);
+		_model->setParams(_par1, _par2, _par3);
 		//	Pointer to Model object of Controller class calls process function. 
 		// process() function process the model according to chosen model type
 		frameFromModel = _model->process(frame);

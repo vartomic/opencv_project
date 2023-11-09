@@ -24,6 +24,8 @@ int main(){
 	// Model class sets values of slider current position from Controller class and Controller class returns link to slider values.
 	//	VieSrc object calls function setTrackbar(), with trackbar name and value of slider to create trackbar.
 	windSecond.setTrackbar("par2", controller.getPar2());
+	//	VieSrc object calls function setTrackbar(), with trackbar name and value of slider to create trackbar.
+	windSecond.setTrackbar("par3", controller.getPar3());
 	//	Sends videoimage to controller
 	controller.setData(data.getData(DataFactory::TypeData::TypeDataVideo));
 	//	Sends window1 to controller

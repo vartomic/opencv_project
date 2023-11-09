@@ -33,9 +33,16 @@ cv::Mat HSVModel::process(cv::Mat frame) {
 	if (sat_to > 240) {
 		sat_to = 240;
 	}
-	//	Sets brightness
+	//	Sets brightness range
 	int val_from = 50;
 	int val_to = 200;
+	//	Checks if values of slider is incorrect
+	if (sat_to < 50) {
+		sat_to = 50;
+	}
+	if (sat_to > 200) {
+		sat_to = 200;
+	}
 	cv::Mat rangeImage;
 	//	Checks if array elements lie between the elements of two other arrays
 	//Input arguments: hsvImage = inputArray, cv::Scalar(inputArray (upper bounds)),

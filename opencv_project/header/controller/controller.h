@@ -17,10 +17,12 @@ class Controller {
 	Model* _model = 0;
 	//	Pointer to trackbar
 	int* _trackbar;
-	//	Slider value in trackbar
+	//	Slider value of hue in trackbar
 	int _par1 = 0;
-	//	Slider value in trackbar
+	//	Slider value of saturation in trackbar
 	int _par2 = 0;
+	//	Slider value of brigthness in trackbar
+	int _par3 = 0;
 
 public:
 	//	Empty constructor
@@ -37,10 +39,12 @@ public:
 	//	Function sets model object to controller. Input of function is pointer to model object from Model class, 
 	//	controller assigns it to model object in controller class
 	void setModel(Model* model);
-	//	Function returns link to slider parameter from Model class. Model class assigns slider its current value
+	//	Function returns link to slider parameter for hue from Model class. Model class assigns slider its current value
 	int* getPar1();
-	//	Function returns link to slider parameter from Model class. Model class assigns slider its current value
+	//	Function returns link to slider parameter for saturation from Model class. Model class assigns slider its current value
 	int* getPar2();
+	//	Function returns link to slider parameter for brightness from Model class. Model class assigns slider its current value
+	int* getPar3();
 	//	Function gets datatype, modeltype, resize image for specified window, 
 	// sets slider values of the trackbar and displays them inside the window
 	void work();

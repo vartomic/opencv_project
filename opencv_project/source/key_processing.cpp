@@ -30,10 +30,12 @@ void keyProcess(Controller &controller, DataFactory &data, ModelFactory &model, 
     }
     //  If '3' key is pressed
     else if (tolower(key) == '3') {
-        //  ViewSrc object calls function setHSVtrackbar to create trackbar 
+        //  ViewSrc object calls function setHSVtrackbar to create trackbar and sets first slider max and current position
         windSecond.setHSVtrackbar("par1", /*max=*/240, /*pos=*/100);
-        //  ViewSrc object calls function setHSVtrackbar to create trackbar 
+        //  ViewSrc object calls function setHSVtrackbar to create trackbar and sets second slider max and current position
         windSecond.setHSVtrackbar("par2", /*max=*/240, /*pos=*/100);
+        //  ViewSrc object calls function setHSVtrackbar to create trackbar and sets third slider max and current position
+        windSecond.setHSVtrackbar("par3", /*max=*/200, /*pos=*/50);
         //  ModelFactory object calls function getData() and returns hsv model type. Controller sets that modeltype inside itself
         controller.setModel(model.getModel(ModelFactory::TypeModel::TypeHSVModel));
     }        

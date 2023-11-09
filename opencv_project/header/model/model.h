@@ -6,7 +6,7 @@ class Model {
 
 protected:
 	// Sliders current positions
-	int _par1, _par2;
+	int _par1, _par2, _par3;
 
 public:
 	//	Virtual function returns window frame
@@ -14,5 +14,5 @@ public:
 		return frame;
 	}
 	//	Function sets values of sliders current positions from Controller class 
-	void setParams(int par1, int par2);
+	void setParams(int par1, int par2, int par3);
 };

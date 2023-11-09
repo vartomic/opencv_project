@@ -1,5 +1,4 @@
-#pragma once
-
+ #pragma once
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui.hpp>
 #include "model/model.h"
@@ -23,10 +22,12 @@ class HaarModel : public Model {
 				std::cerr << "ERROR: Could not load classifier cascade" << std::endl;
 			}
 		}
-		//
+		//	Function converts image to gray color, equalizes the histogram of a grayscale image
+		//  and detects selected object in the input image
 		void detect(cv::Mat& image, std::vector<cv::Rect>& faces);
-		//
-		void visualize(cv::Mat& image, std::vector<cv::Rect>& faces, double fps);
-		//main function in model, calls other functions
+		//	Draws rectangle using 4 rounded coordinates
+		void visualize(cv::Mat& image, std::vector<cv::Rect>& faces, double fps, int thickness = 2);
+		//	Function starts tickmeter, creates clone of an input image, calls the detector for finding faces in input image,
+		//	calls visualizing function for drawing rectangles around founded face
 		cv::Mat process(cv::Mat frame);
 };

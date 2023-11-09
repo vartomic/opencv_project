@@ -7,7 +7,8 @@ cv::Mat DataPhoto::getData() {
 }
 void DataPhoto::nextImage() {
 	//	Array of image paths
-	const cv::String ARR_IMAGES[] = { "img/faces/1.jpg", "img/faces/2.jpg", "img/faces/3.jpg" };
+	const cv::String ARR_IMAGES[] = { "img/faces/1.jpg", "img/faces/2.jpg", "img/faces/3.jpg", "img/faces/4.jpg", "img/faces/5.jpg",
+	"img/faces/6.jpg", "img/faces/7.jpg", "img/faces/8.jpg", "img/faces/9.jpg", "img/faces/10.jpg"};
 	//	Reads img
 	_img = cv::imread(ARR_IMAGES[_curImageIndex]);
 	//	If not data
@@ -19,7 +20,7 @@ void DataPhoto::nextImage() {
 	//	Index increases on 1
 	_curImageIndex++;
 	//	If current index of array greater than size of array current index equalizes to 0
-	if (_curImageIndex > ARR_SIZE) {
+	if (_curImageIndex >= ARR_SIZE) {
 		_curImageIndex = 0;
 	}
 }
