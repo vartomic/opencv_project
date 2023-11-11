@@ -17,9 +17,9 @@ void MTCNNModel::visualize(cv::Mat& image, std::vector<Face>& faces, double fps,
         rectangle(image, rect, cv::Scalar(0, 0, 255), thickness);
     }  
     //  Function draws the text string with fps value in the image
-    putText(image, fpsString, cv::Point(0, 15), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 0, 255), 1);
+    putText(image, fpsString, cv::Point(0, 15), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 255, 255), thickness);
     //  Function draws the text string with resolution of input image on the image
-    putText(image, resolutionString, cv::Point(0, 35), cv::FONT_ITALIC, 0.5, cv::Scalar(255, 0, 0), 1);
+    putText(image, resolutionString, cv::Point(0, 35), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 0, 255), thickness);
 }
 cv::Mat MTCNNModel::process(cv::Mat frame) {
     //  Checks if frame is empty

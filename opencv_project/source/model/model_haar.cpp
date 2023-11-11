@@ -21,9 +21,9 @@ void HaarModel::visualize(cv::Mat& image, std::vector<cv::Rect>& faces, double f
     //  Text string with width and height of input image
     std::string resolutionString = cv::format("Resolution : %d x %d", width, height);
     //  Function draws the text string with fps value in the image
-    putText(image, fpsString, cv::Point(0, 15), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 255, 255), 1);
+    putText(image, fpsString, cv::Point(0, 15), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 255, 255), thickness);
     //  Function draws the text string with resolution of input image on the image
-    putText(image, resolutionString, cv::Point(0, 35), cv::FONT_ITALIC, 0.5, cv::Scalar(255, 0, 0), 1);
+    putText(image, resolutionString, cv::Point(0, 35), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 0, 255), thickness);
     //  Loop for all faces
     for (size_t i = 0; i < faces.size(); i++){
         //  2D rectangle
@@ -31,7 +31,7 @@ void HaarModel::visualize(cv::Mat& image, std::vector<cv::Rect>& faces, double f
         //  Draws rectangle using 4 rounded coordinates
         rectangle(image, cv::Point(cvRound(r.x), cvRound(r.y)),
             cv::Point(cvRound(r.x + r.width - 1), cvRound(r.y + r.height - 1)),
-           cv::Scalar(0, 255, 255), thickness);
+           cv::Scalar(255, 0, 0), thickness);
     }
 }
 cv::Mat HaarModel::process(cv::Mat frame) {

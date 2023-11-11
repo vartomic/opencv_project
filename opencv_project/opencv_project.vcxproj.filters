@@ -60,6 +60,18 @@
     <ClCompile Include="source\model\model_mtcnn.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="mtcnn\lib\src\detector.cc">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="mtcnn\lib\src\onet.cc">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="mtcnn\lib\src\pnet.cc">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="mtcnn\lib\src\rnet.cc">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\apple.jpg">
@@ -184,6 +196,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cmake\OpenCVConfig.cmake" />
+    <None Include="mtcnn\data\models\det1.caffemodel" />
+    <None Include="mtcnn\data\models\det1.prototxt" />
+    <None Include="mtcnn\data\models\det2.caffemodel" />
+    <None Include="mtcnn\data\models\det2.prototxt" />
+    <None Include="mtcnn\data\models\det3.caffemodel" />
+    <None Include="mtcnn\data\models\det3.prototxt" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="mtcnn\sample\CMakeLists.txt" />

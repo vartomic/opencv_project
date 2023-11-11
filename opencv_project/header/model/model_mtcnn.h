@@ -13,29 +13,20 @@ class MTCNNModel: public Model {
 public:
 	//	Constructor
 	MTCNNModel() {
-		//
 		ProposalNetwork::Config pConfig;
-		//
+		//	A caffeModel file is a machine learning model created by Caffe. 
+		//	It contains an image classification or image segmentation model that has been trained using Caffe. 
 		pConfig.caffeModel = modelDir + "det1.caffemodel";
-		//
+		//	caffeModel files are created from .prototxt files.
 		pConfig.protoText = modelDir + "det1.prototxt";
-		//
 		pConfig.threshold = 0.6f;
-		//
 		RefineNetwork::Config rConfig;
-		//
 		rConfig.caffeModel = modelDir + "det2.caffemodel";
-		//
 		rConfig.protoText = modelDir + "det2.prototxt";
-		//
 		rConfig.threshold = 0.7f;
-		//
 		OutputNetwork::Config oConfig;
-		//
 		oConfig.caffeModel = modelDir + "det3.caffemodel";
-		//
 		oConfig.protoText = modelDir + "det3.prototxt";
-		//
 		oConfig.threshold = 0.7f;
 		//	Allocates memory for new detector
 		detector = new MTCNNDetector(pConfig, rConfig, oConfig);
