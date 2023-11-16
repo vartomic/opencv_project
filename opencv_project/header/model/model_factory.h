@@ -1,5 +1,4 @@
 #pragma once
-#include "model/model.h"
 #include "model/model_gray.h"
 #include "model/model_canny.h"
 #include "model/model_hsv.h"

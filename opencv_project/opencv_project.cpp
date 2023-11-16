@@ -1,6 +1,4 @@
-﻿#include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
-#include "controller/controller.h"
+﻿#include "controller/controller.h"
 #include "view/view_src.h"
 #include "data/data_factory.h"
 #include "model/model_factory.h"

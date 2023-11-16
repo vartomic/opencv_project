@@ -1,5 +1,3 @@
-#include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
 #include "model/model_gray.h"
 
 cv::Mat GrayModel::process(cv::Mat frame) {

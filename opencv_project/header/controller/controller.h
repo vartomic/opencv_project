@@ -1,8 +1,5 @@
 #pragma once
-#include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
 #include "data/data.h"
-#include "view/view.h"
 #include "view/view_src.h"
 #include "model/model.h"
 

@@ -1,14 +1,18 @@
 #pragma once
 #include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
-#include <filesystem>
 #include "data.h"
 
+//	Derived from class Data, class DataPhoto iterates over the elements of a directory with images, 
+//	converts file paths in string and places them in a vector after checking if filepath is regular file.
+//	Then reads vector of paths and iterates over them by increasing index.
+// ƒŒœ»—¿“‹ œ–Œ ‘À¿√
 class DataPhoto: public Data {
 	//	Image object
 	cv::Mat _img;
 	//	Index of image
 	int _curImageIndex = 0;
+	//
+	bool ready;
 
 public:
 	//	Function returns image

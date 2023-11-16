@@ -1,6 +1,3 @@
-#include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
 #include "model/model_canny.h"
 
 cv::Mat CannyModel::process(cv::Mat frame) {

@@ -1,6 +1,3 @@
-#pragma once
-#include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
 #include "view/view_src.h"
 
 void ViewSrc::setTrackbar(cv::String name, int* trackbar) {

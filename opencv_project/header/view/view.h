@@ -1,6 +1,5 @@
 #pragma once
 #include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
 
 class View {
 	//	image object
