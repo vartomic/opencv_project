@@ -12,7 +12,7 @@ class DataPhoto: public Data {
 	//	Index of image
 	int _curImageIndex = 0;
 	//
-	bool ready;
+	bool _ready;
 
 public:
 	//	Function returns image

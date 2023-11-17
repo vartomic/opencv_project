@@ -27,7 +27,7 @@
     <ClCompile Include="source\data\data_photo.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\data\data_video.cpp">
+    <ClCompile Include="source\data\data_camera.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="source\model\model_canny.cpp">
@@ -58,6 +58,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="source\model\model_mtcnn.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\model_dlib.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="mtcnn\lib\src\detector.cc">
@@ -118,7 +121,7 @@
     <ClInclude Include="header\data\data_photo.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="header\data\data_video.h">
+    <ClInclude Include="header\data\data_camera.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="header\key_processing.h">
@@ -172,6 +175,12 @@
     <ClInclude Include="mtcnn\lib\include\rnet.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="header\model\model_mtcnn.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="header\model\model_dlib.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
     <ClInclude Include="mtcnn\lib\mtcnn\detector.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -190,9 +199,6 @@
     <ClInclude Include="mtcnn\lib\mtcnn\rnet.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="header\model\model_mtcnn.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="cmake\OpenCVConfig.cmake" />
@@ -207,5 +213,10 @@
     <Text Include="mtcnn\sample\CMakeLists.txt" />
     <Text Include="mtcnn\CMakeLists.txt" />
     <Text Include="mtcnn\lib\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="header\dlib.lib\dlib19.24.0_debug_64bit_msvc1937.lib" />
+    <Library Include="dlib.lib\dlib19.24.0_debug_64bit_msvc1937.lib" />
+    <Library Include="dlib\dlib.lib" />
   </ItemGroup>
 </Project>

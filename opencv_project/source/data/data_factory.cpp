@@ -4,7 +4,7 @@ Data* DataFactory::getData(enum TypeData type){
     //  Static pointer to photo = 0
     static DataPhoto *dataPhoto = 0;
     //  Static pointer to video = 0
-    static DataVideo *dataVideo = 0;
+    static DataCamera *dataCamera = 0;
 
     //  If type of data = photo
     if (type == TypeData::TypeDataPhoto) {
@@ -19,14 +19,14 @@ Data* DataFactory::getData(enum TypeData type){
         return dataPhoto;
     }
     //  If type of data = video
-    else if (type == TypeData::TypeDataVideo){
+    else if (type == TypeData::TypeDataCamera){
         //  If pointer to video = 0
-        if (dataVideo == nullptr){
+        if (dataCamera == nullptr){
             //  Allocate memory for new photo
-            dataVideo = new DataVideo();
+            dataCamera = new DataCamera();
         }
         //  Returns video
-        return dataVideo;
+        return dataCamera;
     }
     return 0;
 }

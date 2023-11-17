@@ -16,7 +16,7 @@ void keyProcess(Controller &controller, DataFactory &data, ModelFactory &model, 
     //  If 'v' key is pressed
     else if (tolower(key) == 'v') {
         //  DataFactory object calls function getData() and returns photo type. Controller sets that datatype inside itself
-        controller.setData(data.getData(DataFactory::TypeData::TypeDataVideo));
+        controller.setData(data.getData(DataFactory::TypeData::TypeDataCamera));
     }
     //  If '1' key is pressed
     else if (tolower(key) == '1') {

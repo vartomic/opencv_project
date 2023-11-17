@@ -108,7 +108,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>header;mtcnn/lib;img/faces</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>header;mtcnn/lib;img/faces;dlib;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -144,9 +144,10 @@
     <ClCompile Include="source\controller\controller.cpp" />
     <ClCompile Include="source\data\data_factory.cpp" />
     <ClCompile Include="source\data\data_photo.cpp" />
-    <ClCompile Include="source\data\data_video.cpp" />
+    <ClCompile Include="source\data\data_camera.cpp" />
     <ClCompile Include="source\key_processing.cpp" />
     <ClCompile Include="source\model\model_canny.cpp" />
+    <ClCompile Include="source\model\model_dlib.cpp" />
     <ClCompile Include="source\model\model_dnn.cpp" />
     <ClCompile Include="source\model\model_gray.cpp" />
     <ClCompile Include="source\model\model_haar.cpp" />
@@ -168,9 +169,10 @@
     <ClInclude Include="header\data\data.h" />
     <ClInclude Include="header\data\data_factory.h" />
     <ClInclude Include="header\data\data_photo.h" />
-    <ClInclude Include="header\data\data_video.h" />
+    <ClInclude Include="header\data\data_camera.h" />
     <ClInclude Include="header\key_processing.h" />
     <ClInclude Include="header\model\model_canny.h" />
+    <ClInclude Include="header\model\model_dlib.h" />
     <ClInclude Include="header\model\model_dnn.h" />
     <ClInclude Include="header\model\model_gray.h" />
     <ClInclude Include="header\model\model_haar.h" />
@@ -212,6 +214,11 @@
     <Text Include="mtcnn\CMakeLists.txt" />
     <Text Include="mtcnn\lib\CMakeLists.txt" />
     <Text Include="mtcnn\sample\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="dlib.lib\dlib19.24.0_debug_64bit_msvc1937.lib" />
+    <Library Include="dlib\dlib.lib" />
+    <Library Include="header\dlib.lib\dlib19.24.0_debug_64bit_msvc1937.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

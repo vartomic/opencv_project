@@ -25,7 +25,7 @@ int main(){
 	//	VieSrc object calls function setTrackbar(), with trackbar name and value of slider to create trackbar.
 	windSecond.setTrackbar("par3", controller.getPar3());
 	//	Sends videoimage to controller
-	controller.setData(data.getData(DataFactory::TypeData::TypeDataVideo));
+	controller.setData(data.getData(DataFactory::TypeData::TypeDataCamera));
 	//	Sends window1 to controller
 	controller.setView1(&windFirst);
 	//	Sends window2 to controller
