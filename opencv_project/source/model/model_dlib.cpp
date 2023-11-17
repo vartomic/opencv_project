@@ -13,8 +13,9 @@ void DlibModel::visualize(cv::Mat& image) {
 	std::vector<dlib::rectangle> faces = detector(image);
 
 	std::vector<dlib::full_object_detection> shapes;
-	for (unsigned long i = 0; i < faces.size(); ++i)
+	for (unsigned long i = 0; i < faces.size(); ++i){
 		//shapes.push_back(image, faces[i]));//
+    }
 }
 
 cv::Mat process(cv::Mat frame) {
