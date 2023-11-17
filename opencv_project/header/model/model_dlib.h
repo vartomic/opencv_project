@@ -1,13 +1,19 @@
 #pragma once
+#include <opencv2/opencv.hpp>
 #include <dlib/image_processing/frontal_face_detector.h>
 
 class DlibModel {
 
 public:
+	// Load face detection and pose estimation models.
+	dlib::frontal_face_detector detector;
+
 	DlibModel() {
-		// Load face detection and pose estimation models.
-		frontal_face_detector detector = get_frontal_face_detector();
-		shape_predictor pose_model;
-		deserialize("shape_predictor_68_face_landmarks.dat") >> pose_model;
+		//
+		detector = dlib::get_frontal_face_detector();
 	}
+
+	void visualize(cv::Mat& image);
+
+	cv::Mat process(cv::Mat frame);
 };
