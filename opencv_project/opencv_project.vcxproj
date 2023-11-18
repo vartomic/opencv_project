@@ -215,9 +215,7 @@
     <Text Include="mtcnn\sample\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="dlib.lib\dlib19.24.0_debug_64bit_msvc1937.lib" />
     <Library Include="dlib\dlib.lib" />
-    <Library Include="header\dlib.lib\dlib19.24.0_debug_64bit_msvc1937.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

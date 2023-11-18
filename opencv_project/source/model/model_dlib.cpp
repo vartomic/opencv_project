@@ -26,13 +26,17 @@ cv::Mat DlibModel::process(cv::Mat frame) {
     tm.start();
     //  Creates a clone of an input image
     cv::Mat image = frame.clone();
-    // Detect faces 
-    faces = detector(image);
-    //  Tickmeter stops
-    tm.stop();
     //
-    visualize(image, -1, faces, tm.getFPS());
+    dlib::cv_image<dlib::bgr_pixel> dlibImage(image);
+    // Detect faces 
+    faces = detector(dlibImage);
+    //
+    cv::Mat temp = dlib::toMat(dlibImage);
+    //
+    visualize(temp, -1, faces, tm.getFPS());
+    //  Tickmeter stops
+    tm.stop();    
     //  Returns processed image
-    return image;
+    return temp;
 
 }

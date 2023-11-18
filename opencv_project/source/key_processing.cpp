@@ -54,5 +54,10 @@ void keyProcess(Controller &controller, DataFactory &data, ModelFactory &model, 
         //  ModelFactory object calls function getData() and returns mtcnn model type. Controller sets that modeltype inside itself
         controller.setModel(model.getModel(ModelFactory::TypeModel::TypeMTCNNModel));
     }
+    //  If '7' key is pressed
+    else if (tolower(key) == '7') {
+        //  ModelFactory object calls function getData() and returns dlib model type. Controller sets that modeltype inside itself
+        controller.setModel(model.getModel(ModelFactory::TypeModel::TypeDlibModel));
+    }
 }
 
