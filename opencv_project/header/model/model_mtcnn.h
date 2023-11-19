@@ -32,7 +32,7 @@ public:
 	}
 	//	Destructor
 	~MTCNNModel() {};
-	//	Finds all faces, receives a rectangle froom each face and draws rectangle around face
+	//	Receives a rectangle from each face and draws rectangle around face
 	void visualize(cv::Mat& image, std::vector<Face>& faces, double fps, int thickness = 2);
 	//	Function starts tickmeter, creates clone of an input image, calls the detector for finding faces in input image,
 	//	calls visualizing function for drawing rectangles around founded face
