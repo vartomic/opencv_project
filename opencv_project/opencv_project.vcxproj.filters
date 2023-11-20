@@ -215,8 +215,6 @@
     <Text Include="mtcnn\lib\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="header\dlib.lib\dlib19.24.0_debug_64bit_msvc1937.lib" />
-    <Library Include="dlib.lib\dlib19.24.0_debug_64bit_msvc1937.lib" />
     <Library Include="dlib\dlib.lib" />
   </ItemGroup>
 </Project>

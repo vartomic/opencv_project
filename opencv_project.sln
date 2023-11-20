@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencv_project", "opencv_project\opencv_project.vcxproj", "{5800E134-819A-4158-892D-FFF86FC7B5AA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lib_mtcnn", "lib_mtcnn\lib_mtcnn.vcxproj", "{BC9AEF3F-828F-45E7-A8E5-4BC9FEFD2580}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{5800E134-819A-4158-892D-FFF86FC7B5AA}.Release|x64.Build.0 = Release|x64
 		{5800E134-819A-4158-892D-FFF86FC7B5AA}.Release|x86.ActiveCfg = Release|Win32
 		{5800E134-819A-4158-892D-FFF86FC7B5AA}.Release|x86.Build.0 = Release|Win32
+		{BC9AEF3F-828F-45E7-A8E5-4BC9FEFD2580}.Debug|x64.ActiveCfg = Debug|x64
+		{BC9AEF3F-828F-45E7-A8E5-4BC9FEFD2580}.Debug|x64.Build.0 = Debug|x64
+		{BC9AEF3F-828F-45E7-A8E5-4BC9FEFD2580}.Debug|x86.ActiveCfg = Debug|Win32
+		{BC9AEF3F-828F-45E7-A8E5-4BC9FEFD2580}.Debug|x86.Build.0 = Debug|Win32
+		{BC9AEF3F-828F-45E7-A8E5-4BC9FEFD2580}.Release|x64.ActiveCfg = Release|x64
+		{BC9AEF3F-828F-45E7-A8E5-4BC9FEFD2580}.Release|x64.Build.0 = Release|x64
+		{BC9AEF3F-828F-45E7-A8E5-4BC9FEFD2580}.Release|x86.ActiveCfg = Release|Win32
+		{BC9AEF3F-828F-45E7-A8E5-4BC9FEFD2580}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

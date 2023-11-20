@@ -1,7 +1,7 @@
 #pragma once
 #include <opencv2/opencv.hpp>
 #include "model/model.h"
-#include <mtcnn/detector.h>
+#include "../../lib_mtcnn/include/mtcnn/detector.h"
 
 class MTCNNModel: public Model {
 	//	Declaration of new mtcnn detector
