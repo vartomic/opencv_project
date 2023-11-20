@@ -63,18 +63,6 @@
     <ClCompile Include="source\model\model_dlib.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="mtcnn\lib\src\detector.cc">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="mtcnn\lib\src\onet.cc">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="mtcnn\lib\src\pnet.cc">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="mtcnn\lib\src\rnet.cc">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\apple.jpg">
