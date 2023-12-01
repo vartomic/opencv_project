@@ -25,13 +25,13 @@ int main(){
 	//	VieSrc object calls function setTrackbar(), with trackbar name and value of slider to create trackbar.
 	windSecond.setTrackbar("par3", controller.getPar3());
 	//	Sends videoimage to controller
-	controller.setData(data.getData(DataFactory::TypeData::TypeDataCamera));
+	controller.setData(data.getData(DataFactory::TypeData::TypeDataVideo));
 	//	Sends window1 to controller
 	controller.setView1(&windFirst);
 	//	Sends window2 to controller
 	controller.setView2(&windSecond);
 	//	Model class calls haar model from enum type and Controller class sets this model to its local variable
-	controller.setModel(model.getModel(ModelFactory::TypeModel::TypeDlibModel));
+	controller.setModel(model.getModel(ModelFactory::TypeModel::TypeDNNModel));
 	//	Endless loop
 	while (true) {
 		//	Calls function keyProcess for chosing datatype and modeltype.

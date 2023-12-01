@@ -32,6 +32,14 @@
     <ClInclude Include="include\mtcnn\pnet.h" />
     <ClInclude Include="include\mtcnn\rnet.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\models\det1.caffemodel" />
+    <None Include="data\models\det1.prototxt" />
+    <None Include="data\models\det2.caffemodel" />
+    <None Include="data\models\det2.prototxt" />
+    <None Include="data\models\det3.caffemodel" />
+    <None Include="data\models\det3.prototxt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{BC9AEF3F-828F-45E7-A8E5-4BC9FEFD2580}</ProjectGuid>

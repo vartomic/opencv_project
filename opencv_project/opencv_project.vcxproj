@@ -108,7 +108,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>header;$(SolutionDir)lib_mtcnn/include;img/faces;dlib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>header;$(SolutionDir)lib_mtcnn/include;img/faces;vid/faces;dlib</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -137,9 +137,11 @@
   <ItemGroup>
     <ClCompile Include="opencv_project.cpp" />
     <ClCompile Include="source\controller\controller.cpp" />
+    <ClCompile Include="source\data\data.cpp" />
     <ClCompile Include="source\data\data_factory.cpp" />
     <ClCompile Include="source\data\data_photo.cpp" />
     <ClCompile Include="source\data\data_camera.cpp" />
+    <ClCompile Include="source\data\data_video.cpp" />
     <ClCompile Include="source\key_processing.cpp" />
     <ClCompile Include="source\model\model_canny.cpp" />
     <ClCompile Include="source\model\model_dlib.cpp" />
@@ -165,6 +167,7 @@
     <ClInclude Include="header\data\data_factory.h" />
     <ClInclude Include="header\data\data_photo.h" />
     <ClInclude Include="header\data\data_camera.h" />
+    <ClInclude Include="header\data\data_video.h" />
     <ClInclude Include="header\key_processing.h" />
     <ClInclude Include="header\model\model_canny.h" />
     <ClInclude Include="header\model\model_dlib.h" />
@@ -177,38 +180,6 @@
     <ClInclude Include="header\model\model_mtcnn.h" />
     <ClInclude Include="header\view\view.h" />
     <ClInclude Include="header\view\view_src.h" />
-    <ClInclude Include="mtcnn\lib\include\detector.h" />
-    <ClInclude Include="mtcnn\lib\include\face.h" />
-    <ClInclude Include="mtcnn\lib\include\helpers.h" />
-    <ClInclude Include="mtcnn\lib\include\mtcnn\detector.h" />
-    <ClInclude Include="mtcnn\lib\include\mtcnn\face.h" />
-    <ClInclude Include="mtcnn\lib\include\mtcnn\helpers.h" />
-    <ClInclude Include="mtcnn\lib\include\mtcnn\onet.h" />
-    <ClInclude Include="mtcnn\lib\include\mtcnn\pnet.h" />
-    <ClInclude Include="mtcnn\lib\include\mtcnn\rnet.h" />
-    <ClInclude Include="mtcnn\lib\include\onet.h" />
-    <ClInclude Include="mtcnn\lib\include\pnet.h" />
-    <ClInclude Include="mtcnn\lib\include\rnet.h" />
-    <ClInclude Include="mtcnn\lib\mtcnn\detector.h" />
-    <ClInclude Include="mtcnn\lib\mtcnn\face.h" />
-    <ClInclude Include="mtcnn\lib\mtcnn\helpers.h" />
-    <ClInclude Include="mtcnn\lib\mtcnn\onet.h" />
-    <ClInclude Include="mtcnn\lib\mtcnn\pnet.h" />
-    <ClInclude Include="mtcnn\lib\mtcnn\rnet.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cmake\OpenCVConfig.cmake" />
-    <None Include="mtcnn\data\models\det1.caffemodel" />
-    <None Include="mtcnn\data\models\det1.prototxt" />
-    <None Include="mtcnn\data\models\det2.caffemodel" />
-    <None Include="mtcnn\data\models\det2.prototxt" />
-    <None Include="mtcnn\data\models\det3.caffemodel" />
-    <None Include="mtcnn\data\models\det3.prototxt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="mtcnn\CMakeLists.txt" />
-    <Text Include="mtcnn\lib\CMakeLists.txt" />
-    <Text Include="mtcnn\sample\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="dlib\dlib.lib" />

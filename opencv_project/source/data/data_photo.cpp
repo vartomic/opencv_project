@@ -4,11 +4,11 @@
 namespace fs = std::filesystem;
 
 cv::Mat DataPhoto::getData() {
-	if (_ready == false) {
+	if (getFlag() == false) {
 		return cv::Mat();
 	}
 	else {
-		_ready = false;
+		setFlag(false);
 		return _img;
 	}
 }
@@ -31,8 +31,7 @@ void DataPhoto::nextImage() {
 	if (!_img.data) {
 		std::cout << "Image is missing" << std::endl;
 	}
-	//
-	_ready = true;
+	setFlag(true);
 	//	Index increases on 1
 	_curImageIndex++;
 	//	If current index of array greater than size of array current index equalizes to 0

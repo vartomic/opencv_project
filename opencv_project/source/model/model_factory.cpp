@@ -7,7 +7,7 @@ Model* ModelFactory::getModel(enum TypeModel type) {
     static CannyModel *cannyModel = 0;
     //  Static pointer to hsv model = 0
     static HSVModel *hsvModel = 0;
-    //  Static pointer to face detection model = 0
+    //  Static pointer to dnn model = 0
     static DNNModel* dnnModel = 0;
     //  Static pointer to haar model = 0
     static HaarModel* haarModel = 0;

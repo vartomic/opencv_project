@@ -1,9 +1,14 @@
+#include "data/data_photo.h"
+#include "data/data_camera.h"
+#include "data/data_video.h"
 #include "data/data_factory.h"
 
 Data* DataFactory::getData(enum TypeData type){
     //  Static pointer to photo = 0
     static DataPhoto *dataPhoto = 0;
     //  Static pointer to video = 0
+    static DataVideo* dataVideo = 0;
+    //  Static pointer to video from camera = 0
     static DataCamera *dataCamera = 0;
 
     //  If type of data = photo
@@ -19,10 +24,24 @@ Data* DataFactory::getData(enum TypeData type){
         return dataPhoto;
     }
     //  If type of data = video
+    if (type == TypeData::TypeDataVideo) {
+        //  If pointer to video = 0
+        if (dataVideo == nullptr) {
+            //  Allocate memory for new video
+            dataVideo = new DataVideo();
+        }
+        //  Pointer calls DataVideo class function nextVideo
+        dataVideo->nextVideo();
+        //  Pointer calls DataVideo class function getData
+        dataVideo->getData();
+        //  Returns photo
+        return dataVideo;
+    }
+    //  If type of data = video from camera
     else if (type == TypeData::TypeDataCamera){
         //  If pointer to video = 0
         if (dataCamera == nullptr){
-            //  Allocate memory for new photo
+            //  Allocate memory for new video
             dataCamera = new DataCamera();
         }
         //  Returns video
