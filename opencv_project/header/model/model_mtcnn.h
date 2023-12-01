@@ -7,7 +7,7 @@ class MTCNNModel: public Model {
 	//	Declaration of new mtcnn detector
 	MTCNNDetector *detector;
 	//	Path to the model
-	cv::String modelDir = "C:/Users/Arina/Desktop/visual_studio/cpp_projects/opencv_project/lib_mtcnn/data/models/";
+	cv::String modelDir = "det/";
 
 public:
 	//	Constructor

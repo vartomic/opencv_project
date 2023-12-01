@@ -5,7 +5,7 @@ namespace fs = std::filesystem;
 
 cv::Mat DataVideo::getData() {
 	//	Checks the flag position and changes it
-	_ready = false ? true : false;
+	_ready = true;
 	cv::Mat frame;
 	//	While video not ended  
 	while (1) {
@@ -17,18 +17,18 @@ cv::Mat DataVideo::getData() {
 	return cv::Mat();
 }
 void DataVideo::nextVideo() {
-	//реализовать проверку у файла его разрешения(avi) и только такие добавлять в вектор
-
 	//	fs::path represents paths on a filesystem
 	//	directory_iterator iterates over the elements of a directory (but does not visit the subdirectories)
 	for (const fs::path& p : fs::directory_iterator(VID_PATH)) {
 		if (fs::is_regular_file(p)) {
-			if (p.string().find("avi")) {
-				//	File paths are being converted in string and placed in a vector
+			if (p.string().find("avi") == std::string::npos) {
+			//	//	File paths are being converted in string and placed in a vector
+				std::cout << "Video isn't avi" << '\n';
+			}
+			else { 
 				vecVid.push_back(p.string());
 			}
-			else { std::cout << "Video is not avi" << '\n'; }
-
+			
 		}
 	}
 	//	Opens videofile
@@ -37,8 +37,6 @@ void DataVideo::nextVideo() {
 	if (!_video.isOpened()) {
 		std::cout << "Video is missing" << std::endl;
 	}
-	//	Changes the flag position and streams video
-	getData();
 	//	Index increases on 1
 	_curVideoIndex++;
 	//	If current index of array greater than size of array current index equalizes to 0

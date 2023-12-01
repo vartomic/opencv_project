@@ -32,8 +32,6 @@ Data* DataFactory::getData(enum TypeData type){
         }
         //  Pointer calls DataVideo class function nextVideo
         dataVideo->nextVideo();
-        //  Pointer calls DataVideo class function getData
-        dataVideo->getData();
         //  Returns photo
         return dataVideo;
     }
