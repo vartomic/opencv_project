@@ -7,13 +7,9 @@
 //	Then reads vector of paths and iterates over them by increasing index.
 class DataVideo: public Data {
 	//
-	cv::VideoCapture _video;
+	cv::VideoCapture _videoFrame;
 	//	Index of video
 	int _curVideoIndex = 0;
-	//	Path to videos
-	const std::string VID_PATH = "vid/faces/";
-	//	Vector for videos
-	std::vector<cv::String> vecVid;
 
 public:
 	//	Function returns video

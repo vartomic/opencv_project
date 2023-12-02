@@ -7,7 +7,7 @@
 //	Then reads vector of paths and iterates over them by increasing index.
 class DataPhoto: public Data {
 	//	Image object
-	cv::Mat _img;
+	cv::Mat _imageFrame;
 	//	Index of image
 	int _curImageIndex = 0;
 
