@@ -1,6 +1,6 @@
 #include "model/model_dnn.h"
 
-void DNNModel::visualize(cv::Mat & image, cv::Mat & faces, double fps, int thickness){
+void DNNModel::visualize(cv::Mat & image, cv::Mat & faces, double fps, int processedFrames, int totalFaceScore, double timeElapsed, int thickness){ 
     //  Text string with fps value formatted from double to float
     std::string fpsString = cv::format("FPS : %.2f", (float)fps);
     //  Receives the width of input image
@@ -9,8 +9,9 @@ void DNNModel::visualize(cv::Mat & image, cv::Mat & faces, double fps, int thick
     int height = image.size().height;
     //  Text string with width and height of input image
     std::string resolutionString = cv::format("Resolution : %d x %d", width, height);
+    std::string modelNameString = "Model: DNN";
     //  Outputs fps
-    std::cout << "FPS: " << fpsString << std::endl;
+    std::cout << fpsString << std::endl;
     //  For i = 0 to the last row of faces
     for (int i = 0; i < faces.rows; i++) {
         //  Draws bounding box by the 4 coordinates of a face
@@ -32,12 +33,22 @@ void DNNModel::visualize(cv::Mat & image, cv::Mat & faces, double fps, int thick
         //cv::Point2i pt3 = cv::Point2i(int(faces.at<float>(i, 12)), int(faces.at<float>(i, 13)));
         //cv::line(input, pt1, pt2, cv::Scalar(0, 0, 255), 1, cv::LINE_8, 0);
         //cv::line(input, pt2, pt3, cv::Scalar(0, 0, 255), 1, cv::LINE_8, 0);
-        //cv::line(input, pt1, pt3, cv::Scalar(0, 0, 255), 1, cv::LINE_8, 0);
+        //cv::line(input, pt1, pt3, cv::Scalar(0, 0, 255), 1, cv::LINE_8, 0);  
+        //  
+        totalFaceScore++;
+        //std::cout << cv::format("Inference time: %.2f ms", timeElapsed) << std::endl;
     }
+    //
+    putText(image, modelNameString, cv::Point(0, 15), cv::FONT_ITALIC, 0.5, cv::Scalar(255, 0, 0), thickness);
     //  Function draws the text string with fps value in the image
-    putText(image, fpsString, cv::Point(0, 15), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 255, 255), thickness);
+    putText(image, fpsString, cv::Point(0, 35), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 255, 255), thickness);
     //  Function draws the text string with resolution of input image on the image
-    putText(image, resolutionString, cv::Point(0, 35), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 0, 255), thickness);
+    putText(image, resolutionString, cv::Point(0, 55), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 0, 255), thickness);
+    //
+    std::cout << "Total score of faces: " << totalFaceScore << std::endl;
+    //
+    //std::cout << "Processed frames: " << processedFrames << std::endl;
+
 }
 cv::Mat DNNModel::process(cv::Mat frame) {
     //  Checks if frame is empty
@@ -58,7 +69,7 @@ cv::Mat DNNModel::process(cv::Mat frame) {
     //  Tickmeter stops
     tm.stop();
     //  Function draws rectangles around faces and landmarks on faces, tickmeter receives fps value
-    visualize(image, faces, tm.getFPS());
+    visualize(image, faces, tm.getFPS(), _processedFrames, _totalFaceScore, tm.getTimeMilli());
     //  Returns processed image
     return image;
 }

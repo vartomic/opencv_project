@@ -28,7 +28,7 @@ void DataPhoto::nextImage() {
 	//	Reads img
 	_imageFrame = cv::imread(vectorOfimg[_curImageIndex]);
 	//	If not data
-	if (_imageFrame.data) {
+	if (!_imageFrame.data) {
 		std::cout << "Image is missing" << std::endl;
 	}
 	setFlag(true);
