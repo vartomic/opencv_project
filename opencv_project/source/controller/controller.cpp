@@ -23,6 +23,10 @@ int* Controller::getPar3() {
 	return &_par3;
 }
 void Controller::work() {
+	//	If data or model is not 0
+	if (_data == 0 || _model == 0) {
+		exit(0);
+	}
 	//	If data changes
 	if (_data->getFlag() == true) {
 		//	Resets counter of faces, total amount of ellapsed time and counter of proccesed frames in the model
@@ -33,7 +37,6 @@ void Controller::work() {
 	if (_data != 0)
 		// Pointer to Data object of Controller class calls getData function. getData() returns image
 		frame = _data->getData();
-
 	//	If window frame is not 0
 	if (_controllerView1 != 0)
 		//	Pointer to ViewSrc object of Controller class calls showFrame function with input image parameter.

@@ -5,7 +5,7 @@ namespace fs = std::filesystem;
 
 cv::Mat DataVideo::getData() {
 	//	Changes position of the flag
-	setFlag(true);
+	setFlag(false);
 	cv::Mat frame;
 	// Read the current frame
 	_videoFrame.read(frame);
