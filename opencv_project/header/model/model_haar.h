@@ -1,4 +1,4 @@
- #pragma once
+  #pragma once
 #include <opencv2/opencv.hpp>
 #include "model/model.h"
 
@@ -25,7 +25,7 @@ class HaarModel : public Model {
 		//  and detects selected object in the input image
 		void detect(cv::Mat& image, std::vector<cv::Rect>& faces);
 		//	Draws rectangle using 4 rounded coordinates
-		void visualize(cv::Mat& image, std::vector<cv::Rect>& faces, double fps, int thickness = 2);
+		void visualize(cv::Mat& image, std::vector<cv::Rect>& faces, double fps, int processedFrames, int totalFaceScore, double timeElapsed, int thickness = 2);
 		//	Function starts tickmeter, creates clone of an input image, calls the detector for finding faces in input image,
 		//	calls visualizing function for drawing rectangles around founded face
 		cv::Mat process(cv::Mat frame);

@@ -31,7 +31,7 @@ int main(){
 	//	Sends window2 to controller
 	controller.setView2(&windSecond);
 	//	Model class calls haar model from enum type and Controller class sets this model to its local variable
-	controller.setModel(model.getModel(ModelFactory::TypeModel::TypeDNNModel));
+	controller.setModel(model.getModel(ModelFactory::TypeModel::TypeHaarModel));
 	//	Endless loop
 	while (true) {
 		//	Calls function keyProcess for chosing datatype and modeltype.

@@ -21,17 +21,6 @@ void DNNModel::visualize(cv::Mat & image, cv::Mat & faces, double fps, int proce
     for (int i = 0; i < faces.rows; i++) {
         //  Draws bounding box by the 4 coordinates of a face
         rectangle(image, cv::Rect2i(int(faces.at<float>(i, 0)), int(faces.at<float>(i, 1)), int(faces.at<float>(i, 2)), int(faces.at<float>(i, 3))), cv::Scalar(0, 255, 0), thickness);
-        // Draw landmarks
-        //  Landmark of the right eye
-        circle(image, cv::Point2i(int(faces.at<float>(i, 4)), int(faces.at<float>(i, 5))), 2, cv::Scalar(255, 0, 0), thickness);
-        //  Landmark of the left eye
-        circle(image, cv::Point2i(int(faces.at<float>(i, 6)), int(faces.at<float>(i, 7))), 2, cv::Scalar(0, 0, 255), thickness);
-        //  Landmark of the tip of the nose
-        circle(image, cv::Point2i(int(faces.at<float>(i, 8)), int(faces.at<float>(i, 9))), 2, cv::Scalar(0, 255, 0), thickness);
-        //  Landmark of right corner of the mouth
-        circle(image, cv::Point2i(int(faces.at<float>(i, 10)), int(faces.at<float>(i, 11))), 2, cv::Scalar(255, 0, 255), thickness);
-        //  Landmark of left corner of the mouth
-        circle(image, cv::Point2i(int(faces.at<float>(i, 12)), int(faces.at<float>(i, 13))), 2, cv::Scalar(0, 255, 255), thickness);
     }
     //  Function draws the text string with the name of the model
     putText(image, modelNameString, cv::Point(0, 15), cv::FONT_ITALIC, 0.5, cv::Scalar(255, 0, 0), thickness);
