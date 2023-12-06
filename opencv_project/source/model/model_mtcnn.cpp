@@ -1,14 +1,6 @@
 #include "model/model_mtcnn.h"
 
-void MTCNNModel::visualize(cv::Mat& image, std::vector<Face>& faces, double fps, int thickness) {
-    //  Text string with fps value formatted from double to float
-    std::string fpsString = cv::format("FPS : %.2f", (float)fps);
-    //  Receives the width of input image
-    int width = image.size().width;
-    //  Receives the height of input image
-    int height = image.size().height;
-    //  Text string with width and height of input image
-    std::string resolutionString = cv::format("Resolution : %d x %d", width, height);
+void MTCNNModel::drawRectangles(cv::Mat& image, std::vector<Face>& faces, int thickness) {
     //  Loop for all faces
     for (size_t i = 0; i < faces.size(); ++i) {
         //  Finds all faces and receives a rectangle froom each face 
@@ -16,10 +8,6 @@ void MTCNNModel::visualize(cv::Mat& image, std::vector<Face>& faces, double fps,
         //  Draws rectangle around face
         rectangle(image, rect, cv::Scalar(255, 0, 255), thickness);
     }  
-    //  Function draws the text string with fps value in the image
-    putText(image, fpsString, cv::Point(0, 15), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 255, 255), thickness);
-    //  Function draws the text string with resolution of input image on the image
-    putText(image, resolutionString, cv::Point(0, 35), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 0, 255), thickness);
 }
 cv::Mat MTCNNModel::process(cv::Mat frame) {
     //  Checks if frame is empty
@@ -34,9 +22,18 @@ cv::Mat MTCNNModel::process(cv::Mat frame) {
     cv::Mat image = frame.clone();
     //  Detector finds faces and puts them into vector of faces
     auto faces = detector->detect(image, 20.f, 0.709f);
+    //  Number of founded faces resides in rows of matrix faces. _totalFaceScore adds that number to itself
+    _totalFaceScore += faces.size();
     //  Tickmeter stops
     tm.stop();
-    visualize(image, faces, tm.getFPS());
+    //  Counter of processed frames increments
+    _processedFrames++;
+    //  _totalTime sums to itself number of milliseconds spent on each frame
+    _totalTime += tm.getTimeMilli();
+    //  Function draws rectangles around faces and landmarks on faces, tickmeter receives fps value
+    drawRectangles(image, faces);
+    //  Renders text with fps value, number of processed frames, number of founded faces and ellapsed time in the input image
+    visualize(image, tm.getFPS(), "MTCNN", _processedFrames, _totalFaceScore, _totalTime);
     //  Returns processed image
 	return image;
 }

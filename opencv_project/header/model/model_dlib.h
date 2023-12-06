@@ -17,7 +17,7 @@ public:
 		detector = dlib::get_frontal_face_detector();
 	}
 	//	Draws rectangles around faces and puts on image resolution and fps properties of an image
-	void visualize(cv::Mat& image, int frame, std::vector<dlib::rectangle>& faces, double fps, int thickness = 2);
+	void drawRectangles(cv::Mat& image, std::vector<dlib::rectangle>& faces, int thickness = 2);
 	//	Function detects faces and call visualize function for drawing rectangles around faces
 	cv::Mat process(cv::Mat frame);
 };

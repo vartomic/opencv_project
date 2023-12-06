@@ -20,9 +20,8 @@ class DNNModel : public Model {
 			//	Creates an instance of face detector with given parameters
 			detector = cv::FaceDetectorYN::create(fdModelPath, "", cv::Size(320, 320), scoreThreshold, nmsThreshold, topK);
 		}
-		//  Draws bounding box around founded face, landmarks on the eyes, tip of a nose and corners of the mouth by 4 coordinates,
-		// renders text with fps value in the input image
-		void visualize(cv::Mat& image, cv::Mat& faces, double fps, int processedFrames, int totalFaceScore, double timeElapsed, int thickness = 2);
+		//  Draws bounding box around founded face
+		void drawRectangles(cv::Mat& image, cv::Mat& faces, int thickness = 2);
 		//	Function starts tickmeter, creates clone of an input image, calls the detector for resizing and finding faces in input image,
 		//	calls visualizing function for drawing rectangles and landmarks on the founded face
 		cv::Mat process(cv::Mat frame);
