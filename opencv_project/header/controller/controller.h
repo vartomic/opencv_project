@@ -20,10 +20,14 @@ class Controller {
 	int _par2 = 0;
 	//	Slider value of brigthness in trackbar
 	int _par3 = 0;
-
-public:
 	//	Empty constructor
 	Controller() {}
+	//	Static instance of the controller
+	static Controller* controllerInstance;
+
+public:
+	//	Function allocates memory for new Controller instance if there is none existing instances and returns pointer to that instance
+	static Controller& getInstance();
 	//	Function sets window object to controller. Input argument of function are pointer to view object from View class,
 	//	controller assigns it to view object in controller class
 	void setView1(ViewSrc* view1);

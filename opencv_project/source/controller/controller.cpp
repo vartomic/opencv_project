@@ -1,6 +1,17 @@
 #include <opencv2/opencv.hpp>
 #include "controller\controller.h"
+//	Pointer to instance of the controller = nullptr
+Controller* Controller::controllerInstance = 0;
 
+Controller& Controller::getInstance() {
+	//	If instance of controller does not exist
+	if (!controllerInstance) {
+		//	Allocate memory for new controller instance
+		controllerInstance = new Controller();
+	}
+	//	Returns pointer to new controller instance
+	return *controllerInstance;
+}
 void Controller::setData(Data* data) {
 	_data = data;
 }

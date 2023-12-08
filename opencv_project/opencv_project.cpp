@@ -5,8 +5,8 @@
 #include "header/key_processing.h"
 
 int main(){
-	//	Controller object
-	Controller controller;
+	// Access the Controller instance
+	Controller& controller = Controller::getInstance();
 	//	Data object
 	DataFactory data;
 	//	Model object
@@ -31,7 +31,7 @@ int main(){
 	//	Sends window2 to controller
 	controller.setView2(&windSecond);
 	//	Model class calls haar model from enum type and Controller class sets this model to its local variable
-	controller.setModel(model.getModel(ModelFactory::TypeModel::TypeDlibModel));
+	controller.setModel(model.getModel(ModelFactory::TypeModel::TypeDNNModel));
 	//	Endless loop
 	while (true) {
 		//	Calls function keyProcess for chosing datatype and modeltype.
