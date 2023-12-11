@@ -7,6 +7,7 @@ void DNNModel::drawRectangles(cv::Mat & image, cv::Mat & faces, int thickness){
         rectangle(image, cv::Rect2i(int(faces.at<float>(i, 0)), int(faces.at<float>(i, 1)), int(faces.at<float>(i, 2)), int(faces.at<float>(i, 3))), cv::Scalar(0, 255, 0), thickness);
     }
 }
+
 cv::Mat DNNModel::process(cv::Mat frame) {
     //  Checks if frame is empty
     if (frame.empty()) {

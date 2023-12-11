@@ -7,6 +7,8 @@ class ViewSrc {
 	std::string _winName;
 	//	Window size
 	int _winFlag;
+	//	Vector with descriptions of buttons
+	std::vector<std::string> _keyDescription;
 
 public:
 	//	Empty constructor
@@ -20,10 +22,10 @@ public:
 		//	Creates new window with window name and window size as function arguments
 		cv::namedWindow(_winName, _winFlag);
 	}
-	// Function creates the trackbar with the specified name and range and attaches it to the specified window
-	void setTrackbar(cv::String name, int* trackbar);
-	//	Function creates the trackbar, it's maximum and current position for the HSV model
-	void setHSVtrackbar(cv::String name, int max, int pos);
 	//	Resizes image up to or down to the specified size and displays it in a specified window
 	void showFrame(cv::Mat frame);
+	//	Function receives buttons description and assignes them in ViewSrc class
+	void getKeyDescription(std::vector<std::string> keyDescription);
+	//
+	void showKeyDescription(cv::Mat frame, int thickness = 2);
 };

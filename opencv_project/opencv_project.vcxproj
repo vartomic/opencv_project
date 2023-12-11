@@ -143,20 +143,15 @@
     <ClCompile Include="source\data\data_camera.cpp" />
     <ClCompile Include="source\data\data_video.cpp" />
     <ClCompile Include="source\key_processing.cpp" />
-    <ClCompile Include="source\model\model_canny.cpp" />
     <ClCompile Include="source\model\model_dlib.cpp" />
     <ClCompile Include="source\model\model_dnn.cpp" />
-    <ClCompile Include="source\model\model_gray.cpp" />
     <ClCompile Include="source\model\model_haar.cpp" />
-    <ClCompile Include="source\model\model_hsv.cpp" />
     <ClCompile Include="source\model\model.cpp" />
     <ClCompile Include="source\model\model_factory.cpp" />
     <ClCompile Include="source\model\model_mtcnn.cpp" />
     <ClCompile Include="source\view\view_src.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="img\apple.jpg" />
-    <Image Include="mtcnn\data\2007_007763.jpg" />
     <Image Include="mtcnn\data\2007_007763_result.jpg" />
     <Image Include="mtcnn\data\Aaron_Peirsol_0003.jpg" />
     <Image Include="mtcnn\data\dogs.jpg" />
@@ -169,12 +164,9 @@
     <ClInclude Include="header\data\data_camera.h" />
     <ClInclude Include="header\data\data_video.h" />
     <ClInclude Include="header\key_processing.h" />
-    <ClInclude Include="header\model\model_canny.h" />
     <ClInclude Include="header\model\model_dlib.h" />
     <ClInclude Include="header\model\model_dnn.h" />
-    <ClInclude Include="header\model\model_gray.h" />
     <ClInclude Include="header\model\model_haar.h" />
-    <ClInclude Include="header\model\model_hsv.h" />
     <ClInclude Include="header\model\model.h" />
     <ClInclude Include="header\model\model_factory.h" />
     <ClInclude Include="header\model\model_mtcnn.h" />

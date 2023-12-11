@@ -9,6 +9,7 @@ void MTCNNModel::drawRectangles(cv::Mat& image, std::vector<Face>& faces, int th
         rectangle(image, rect, cv::Scalar(255, 0, 255), thickness);
     }  
 }
+
 cv::Mat MTCNNModel::process(cv::Mat frame) {
     //  Checks if frame is empty
     if (frame.empty()) {

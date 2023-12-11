@@ -6,7 +6,7 @@
 //	converts file paths in string and places them in a vector after checking if filepath is regular file.
 //	Then reads vector of paths and iterates over them by increasing index.
 class DataVideo: public Data {
-	//
+	//	Videoobject
 	cv::VideoCapture _videoFrame;
 	//	Index of video
 	int _curVideoIndex = 0;

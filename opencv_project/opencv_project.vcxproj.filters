@@ -30,15 +30,6 @@
     <ClCompile Include="source\data\data_camera.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\model\model_canny.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="source\model\model_gray.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="source\model\model_hsv.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="source\view\view_src.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -71,9 +62,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="mtcnn\data\2007_007763.jpg">
-      <Filter>Файлы ресурсов</Filter>
-    </Image>
     <Image Include="mtcnn\data\2007_007763_result.jpg">
       <Filter>Файлы ресурсов</Filter>
     </Image>
@@ -81,9 +69,6 @@
       <Filter>Файлы ресурсов</Filter>
     </Image>
     <Image Include="mtcnn\data\dogs.jpg">
-      <Filter>Файлы ресурсов</Filter>
-    </Image>
-    <Image Include="img\apple.jpg">
       <Filter>Файлы ресурсов</Filter>
     </Image>
   </ItemGroup>
@@ -98,15 +83,6 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="header\model\model.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="header\model\model_canny.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="header\model\model_gray.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="header\model\model_hsv.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="header\view\view_src.h">

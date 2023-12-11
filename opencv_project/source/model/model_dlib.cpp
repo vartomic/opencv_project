@@ -10,6 +10,7 @@ void DlibModel::drawRectangles(cv::Mat& image, std::vector<dlib::rectangle>& fac
             cv::Scalar(255, 255, 0), thickness);
     }
 }
+
 cv::Mat DlibModel::process(cv::Mat frame) {
     //  Checks if frame is empty
     if (frame.empty()) {
@@ -39,5 +40,4 @@ cv::Mat DlibModel::process(cv::Mat frame) {
     visualize(image, tm.getFPS(), "Dlib", _processedFrames, _totalFaceScore, _totalTime);
     //  Returns processed image
     return image;
-
 }

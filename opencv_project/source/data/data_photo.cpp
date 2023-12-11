@@ -12,6 +12,7 @@ cv::Mat DataPhoto::getData() {
 		return _imageFrame;
 	}
 }
+
 void DataPhoto::nextImage() {
 	//	Path to images
 	const std::string IMG_PATH = "img/faces/";

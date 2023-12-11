@@ -4,8 +4,6 @@
 class Model {
 
 protected:
-	// Sliders current positions
-	int _par1, _par2, _par3;
 	//	Total amount of ellapsed time
 	double _totalTime = 0.0;
 	//	Counter for proccesed frames
@@ -18,8 +16,6 @@ public:
 	virtual cv::Mat process(cv::Mat frame) {
 		return frame;
 	}
-	//	Function sets values of sliders current positions from Controller class 
-	void setParams(int par1, int par2, int par3);
 	//	Resets counter of faces, total amount of ellapsed time and counter of proccesed frames in the model
 	void reset();
 	//	Renders text with fps value, number of processed frames, number of founded faces and ellapsed time in the input image

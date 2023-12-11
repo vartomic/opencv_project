@@ -7,8 +7,6 @@ class HaarModel : public Model {
 		//	Cascade for searching item in image
 		cv::CascadeClassifier cascade;
 
-		//добавить переключение каскадов
-
 		//	Cascade path name
 		std::string cascadeName = "./haarcascades/haarcascade_frontalface_alt2.xml";
 		//	Vector for faces

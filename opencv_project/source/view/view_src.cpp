@@ -1,14 +1,5 @@
 #include "view/view_src.h"
 
-void ViewSrc::setTrackbar(cv::String name, int* trackbar) {
-	cv::createTrackbar(name, _winName, trackbar, 255);
-}
-void ViewSrc::setHSVtrackbar(cv::String name, int max, int pos) {
-	//	Sets the trackbar maximum position
-	cv::setTrackbarMax(name, _winName, max);
-	//	Sets the trackbar current position
-	cv::setTrackbarPos(name, _winName, pos);
-}
 void ViewSrc::showFrame(cv::Mat frame){
 	//	Checks if frame is empty
 	if (frame.empty()) {
@@ -25,4 +16,13 @@ void ViewSrc::showFrame(cv::Mat frame){
 	cv::resize(frame, resizeFrame, cv::Size(WIDTH_RESIZED_FRAME, HEIGHT_RESIZED_FRAME));
 	//	Displays image in a specified window
 	cv::imshow(_winName, resizeFrame);
+}
+
+void ViewSrc::getKeyDescription(std::vector<std::string> keyDescription) {
+	_keyDescription = keyDescription;
+}
+
+void ViewSrc::showKeyDescription(cv::Mat frame, int thickness) {
+
+	putText(frame, "123", cv::Point(0, 15), cv::FONT_ITALIC, 0.5, cv::Scalar(146, 47, 76), thickness);
 }

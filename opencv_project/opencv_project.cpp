@@ -12,31 +12,22 @@ int main(){
 	//	Model object
 	ModelFactory model;
 	//	ViewSrc object creates new window
-	ViewSrc windFirst("Test_window1", cv::WINDOW_AUTOSIZE);
+	ViewSrc window1("Test_window1", cv::WINDOW_AUTOSIZE);
 	//	ViewSrc object creates new window
-	ViewSrc windSecond("Test_window2", cv::WINDOW_AUTOSIZE);
-	//	Controller object calls function getPar1(). 
-	// Model class sets values of slider current position from Controller class and Controller class returns link to slider values.
-	//	VieSrc object calls function setTrackbar(), with trackbar name and value of slider to create trackbar.
-	windSecond.setTrackbar("par1", controller.getPar1());
-	// Model class sets values of slider current position from Controller class and Controller class returns link to slider values.
-	//	VieSrc object calls function setTrackbar(), with trackbar name and value of slider to create trackbar.
-	windSecond.setTrackbar("par2", controller.getPar2());
-	//	VieSrc object calls function setTrackbar(), with trackbar name and value of slider to create trackbar.
-	windSecond.setTrackbar("par3", controller.getPar3());
+	ViewSrc window2("Test_window2", cv::WINDOW_AUTOSIZE);
 	//	Sends videoimage to controller
 	controller.setData(data.getData(DataFactory::TypeData::TypeDataVideo));
 	//	Sends window1 to controller
-	controller.setView1(&windFirst);
+	controller.setView1(&window1);
 	//	Sends window2 to controller
-	controller.setView2(&windSecond);
+	controller.setView2(&window2);
 	//	Model class calls haar model from enum type and Controller class sets this model to its local variable
 	controller.setModel(model.getModel(ModelFactory::TypeModel::TypeDNNModel));
 	//	Endless loop
 	while (true) {
 		//	Calls function keyProcess for chosing datatype and modeltype.
 		// Input parameters = objects of Controller, Data, Model and ViewSrc classes
-		keyProcess(controller, data, model, windSecond);
+		keyProcess(controller, data, model, window1, window2);
 		//	Controller class calls function work()
 		controller.work();
 	}

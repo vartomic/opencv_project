@@ -1,5 +1,6 @@
 #pragma once
 #include <opencv2/opencv.hpp>
+
 //	Basic class for FataPhoto, DataVideo and FataCamera classes. It's virtual function returns original frame. Function containt bool variable,
 //	which derived classes are changing for their checking if they are receiving not empty frame
 class Data {

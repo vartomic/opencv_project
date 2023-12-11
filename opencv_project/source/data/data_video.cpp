@@ -11,6 +11,7 @@ cv::Mat DataVideo::getData() {
 	_videoFrame.read(frame);
 	return frame;
 }
+
 void DataVideo::nextVideo() {
 	//	Path to videos
 	const std::string VID_PATH = "vid/faces/";

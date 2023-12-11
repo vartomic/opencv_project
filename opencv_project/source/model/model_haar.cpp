@@ -11,6 +11,7 @@ void HaarModel::detect(cv::Mat& image, std::vector<cv::Rect>& faces) {
     cascade.detectMultiScale(gray, faces,
         1.1, 2, 0 | cv::CASCADE_SCALE_IMAGE, cv::Size(30, 30));
 }
+
 void HaarModel::drawRectangles(cv::Mat& image, std::vector<cv::Rect>& faces, int thickness) {
     for (size_t i = 0; i < faces.size(); i++){
         //  2D rectangle
@@ -21,6 +22,7 @@ void HaarModel::drawRectangles(cv::Mat& image, std::vector<cv::Rect>& faces, int
            cv::Scalar(0, 164, 213), thickness);
     }
 }
+
 cv::Mat HaarModel::process(cv::Mat frame) {
     //  Checks if frame is empty
     if (frame.empty()) {

@@ -1,8 +1,14 @@
 #include "key_processing.h"
 
-void keyProcess(Controller &controller, DataFactory &data, ModelFactory &model, ViewSrc &windSecond) {
-    const int delay = 100;
-    //  Waits for pressing key for 100 milliseconds
+void keyProcess(Controller &controller, DataFactory &data, ModelFactory &model, ViewSrc &window1, ViewSrc &window2) {
+    //
+    std::vector<std::string> keyDescription = {"P - change datatype to photo", "V - change datatype to video",
+        "C - change datatype to video from webcamera", "1 - change modeltype to DNN", "2 - change modeltype to Haar Cascades",
+        "3 - change modeltype to MTCNN", "4 - change modeltype to Dlib" };
+    //
+    window1.getKeyDescription(keyDescription);
+    const int delay = 10;
+    //  Waits for pressing key for 10 milliseconds
     int key = cv::waitKey(delay);
     //  Exits if ESC, 'Q' or 'q' key is pressed
     if ((key == tolower(81)) || (key == toupper(81)) || (key == 27)) {
@@ -22,45 +28,24 @@ void keyProcess(Controller &controller, DataFactory &data, ModelFactory &model, 
     else if (tolower(key) == 'c') {
         //  DataFactory object calls function getData() and returns photo type. Controller sets that datatype inside itself
         controller.setData(data.getData(DataFactory::TypeData::TypeDataCamera));
-    }
+    }     
     //  If '1' key is pressed
     else if (tolower(key) == '1') {
-        //  ModelFactory object calls function getData() and returns gray model type. Controller sets that modeltype inside itself
-        controller.setModel(model.getModel(ModelFactory::TypeModel::TypeGrayModel));
-    }
-    //  If '2' key is pressed
-    else if (tolower(key) == '2') {
-        //  ModelFactory object calls function getData() and returns canny model type. Controller sets that modeltype inside itself
-        controller.setModel(model.getModel(ModelFactory::TypeModel::TypeCannyModel));
-    }
-    //  If '3' key is pressed
-    else if (tolower(key) == '3') {
-        //  ViewSrc object calls function setHSVtrackbar to create trackbar and sets first slider max and current position
-        windSecond.setHSVtrackbar("par1", /*max=*/240, /*pos=*/100);
-        //  ViewSrc object calls function setHSVtrackbar to create trackbar and sets second slider max and current position
-        windSecond.setHSVtrackbar("par2", /*max=*/240, /*pos=*/100);
-        //  ViewSrc object calls function setHSVtrackbar to create trackbar and sets third slider max and current position
-        windSecond.setHSVtrackbar("par3", /*max=*/200, /*pos=*/50);
-        //  ModelFactory object calls function getData() and returns hsv model type. Controller sets that modeltype inside itself
-        controller.setModel(model.getModel(ModelFactory::TypeModel::TypeHSVModel));
-    }        
-    //  If '4' key is pressed
-    else if (tolower(key) == '4') {
         //  ModelFactory object calls function getData() and returns dnn model type. Controller sets that modeltype inside itself
         controller.setModel(model.getModel(ModelFactory::TypeModel::TypeDNNModel));
     }
-    //  If '5' key is pressed
-    else if (tolower(key) == '5') {
+    //  If '2' key is pressed
+    else if (tolower(key) == '2') {
         //  ModelFactory object calls function getData() and returns haar model type. Controller sets that modeltype inside itself
         controller.setModel(model.getModel(ModelFactory::TypeModel::TypeHaarModel));
     }
-    //  If '6' key is pressed
-    else if (tolower(key) == '6') {
+    //  If '3' key is pressed
+    else if (tolower(key) == '3') {
         //  ModelFactory object calls function getData() and returns mtcnn model type. Controller sets that modeltype inside itself
         controller.setModel(model.getModel(ModelFactory::TypeModel::TypeMTCNNModel));
     }
-    //  If '7' key is pressed
-    else if (tolower(key) == '7') {
+    //  If '4' key is pressed
+    else if (tolower(key) == '4') {
         //  ModelFactory object calls function getData() and returns dlib model type. Controller sets that modeltype inside itself
         controller.setModel(model.getModel(ModelFactory::TypeModel::TypeDlibModel));
     }
