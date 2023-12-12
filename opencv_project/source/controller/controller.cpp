@@ -45,14 +45,6 @@ void Controller::work() {
 	if (_data != 0)
 		// Pointer to Data object of Controller class calls getData function. getData() returns image
 		frame = _data->getData();
-	//	If window frame is not 0
-	if (_controllerView1 != 0)
-		//
-		_controllerView1->showKeyDescription(frame);
-		//	Pointer to ViewSrc object of Controller class calls showFrame function with input image parameter.
-		//  Function showFrame(frame) returns image with window frame
-		_controllerView1->showFrame(frame);
-
 	cv::Mat frameFromModel;
 	//	If model is not 0
 	if (_model != 0) {
@@ -65,4 +57,11 @@ void Controller::work() {
 		//	Pointer to ViewSrc object of Controller class calls showFrame function with input image parameter.
 		//  Function showFrame(frame) returns image with window frame
 		_controllerView2->showFrame(frameFromModel);
+	//	If window frame is not 0
+	if (_controllerView1 != 0)
+		//	Pointer to ViewSrc object of Controller class calls showKeyDescription function, which puts button descriptions on image
+		_controllerView1->showKeyDescription(frame);
+		//	Pointer to ViewSrc object of Controller class calls showFrame function with input image parameter.
+		//  Function showFrame(frame) returns image with window frame
+		_controllerView1->showFrame(frame);
 }

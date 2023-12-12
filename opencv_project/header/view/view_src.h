@@ -26,6 +26,6 @@ public:
 	void showFrame(cv::Mat frame);
 	//	Function receives buttons description and assignes them in ViewSrc class
 	void getKeyDescription(std::vector<std::string> keyDescription);
-	//
+	//	Function receives image and thickness of line of text as input parameters and put each element of vector keyDescription on image
 	void showKeyDescription(cv::Mat frame, int thickness = 2);
 };

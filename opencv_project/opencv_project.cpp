@@ -27,7 +27,7 @@ int main(){
 	while (true) {
 		//	Calls function keyProcess for chosing datatype and modeltype.
 		// Input parameters = objects of Controller, Data, Model and ViewSrc classes
-		keyProcess(controller, data, model, window1, window2);
+		keyProcess(controller, data, model, window1);
 		//	Controller class calls function work()
 		controller.work();
 	}

@@ -23,6 +23,12 @@ void ViewSrc::getKeyDescription(std::vector<std::string> keyDescription) {
 }
 
 void ViewSrc::showKeyDescription(cv::Mat frame, int thickness) {
-
-	putText(frame, "123", cv::Point(0, 15), cv::FONT_ITALIC, 0.5, cv::Scalar(146, 47, 76), thickness);
+	//	Puts each of 7 elements of string vector on frame
+	putText(frame, _keyDescription[0], cv::Point(0, 15), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), thickness);
+	putText(frame, _keyDescription[1], cv::Point(0, 35), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), thickness);
+	putText(frame, _keyDescription[2], cv::Point(0, 55), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), thickness);
+	putText(frame, _keyDescription[3], cv::Point(0, 75), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), thickness);
+	putText(frame, _keyDescription[4], cv::Point(0, 95), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), thickness);
+	putText(frame, _keyDescription[5], cv::Point(0, 115), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), thickness);
+	putText(frame, _keyDescription[6], cv::Point(0, 135), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), thickness);
 }

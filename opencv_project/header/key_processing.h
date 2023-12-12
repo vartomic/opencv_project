@@ -6,4 +6,4 @@
 
 //	Function returns datatype and modeltype due to pressed key. 
 // Arguments of function are links to Controller, DataFactory, ModelFactory, ViewSrc objects
-void keyProcess(Controller &refController, DataFactory &data, ModelFactory& model, ViewSrc& window1, ViewSrc &window2);
+void keyProcess(Controller &refController, DataFactory &data, ModelFactory& model, ViewSrc& window1);

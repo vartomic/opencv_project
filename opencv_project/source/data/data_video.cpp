@@ -7,6 +7,10 @@ cv::Mat DataVideo::getData() {
 	//	Changes position of the flag
 	setFlag(false);
 	cv::Mat frame;
+	while (!_videoFrame.read(frame)) {
+		//
+		frame = _videoFrame.set(cv::CAP_PROP_POS_FRAMES, 0);
+	}
 	// Read the current frame
 	_videoFrame.read(frame);
 	return frame;
