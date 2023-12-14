@@ -7,8 +7,11 @@ class ViewSrc {
 	std::string _winName;
 	//	Window size
 	int _winFlag;
-	//	Vector with descriptions of buttons
+	//	Vector with descriptions of keys
 	std::vector<std::string> _keyDescription;
+	//	Vector with coordinates of keys descriptions
+	std::vector<cv::Point> data = { cv::Point(0, 15), cv::Point(0, 35), cv::Point(0, 55), cv::Point(0, 75),
+		cv::Point(0, 95), cv::Point(0, 115), cv::Point(0, 135) };
 
 public:
 	//	Empty constructor
@@ -26,6 +29,4 @@ public:
 	void showFrame(cv::Mat frame);
 	//	Function receives buttons description and assignes them in ViewSrc class
 	void getKeyDescription(std::vector<std::string> keyDescription);
-	//	Function receives image and thickness of line of text as input parameters and put each element of vector keyDescription on image
-	void showKeyDescription(cv::Mat frame, int thickness = 2);
 };

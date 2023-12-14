@@ -1,7 +1,7 @@
 #include "key_processing.h"
 
 void keyProcess(Controller &controller, DataFactory &data, ModelFactory &model, ViewSrc &window1) {
-    //
+    //  Vector with descriptions of key actions
     std::vector<std::string> keyDescription = {"P - change datatype to photo", "V - change datatype to video",
         "C - change datatype to video from webcamera", "1 - change modeltype to DNN", "2 - change modeltype to Haar Cascades",
         "3 - change modeltype to MTCNN", "4 - change modeltype to Dlib" };

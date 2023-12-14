@@ -1,6 +1,10 @@
 #include "view/view_src.h"
 
-void ViewSrc::showFrame(cv::Mat frame){
+void ViewSrc::getKeyDescription(std::vector<std::string> keyDescription) {
+	_keyDescription = keyDescription;
+}
+
+void ViewSrc::showFrame(cv::Mat frame) {
 	//	Checks if frame is empty
 	if (frame.empty()) {
 		return;
@@ -14,21 +18,14 @@ void ViewSrc::showFrame(cv::Mat frame){
 	cv::Mat resizeFrame;
 	//	Resizes image up to or down to the specified size
 	cv::resize(frame, resizeFrame, cv::Size(WIDTH_RESIZED_FRAME, HEIGHT_RESIZED_FRAME));
+	//	Loop for all elements in vector with key descriptions
+	for (int i = 0; i < _keyDescription.size(); i++) {
+		//	Loop for all elements in vector with coordinates of key descriptions 
+		for (int j = 0; j < data.size(); j++) {
+			//	Puts text strings of key descriptions on frame
+			putText(resizeFrame, _keyDescription[j], data[j], cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), 2);
+		}
+	}
 	//	Displays image in a specified window
 	cv::imshow(_winName, resizeFrame);
-}
-
-void ViewSrc::getKeyDescription(std::vector<std::string> keyDescription) {
-	_keyDescription = keyDescription;
-}
-
-void ViewSrc::showKeyDescription(cv::Mat frame, int thickness) {
-	//	Puts each of 7 elements of string vector on frame
-	putText(frame, _keyDescription[0], cv::Point(0, 15), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), thickness);
-	putText(frame, _keyDescription[1], cv::Point(0, 35), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), thickness);
-	putText(frame, _keyDescription[2], cv::Point(0, 55), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), thickness);
-	putText(frame, _keyDescription[3], cv::Point(0, 75), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), thickness);
-	putText(frame, _keyDescription[4], cv::Point(0, 95), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), thickness);
-	putText(frame, _keyDescription[5], cv::Point(0, 115), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), thickness);
-	putText(frame, _keyDescription[6], cv::Point(0, 135), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), thickness);
 }
