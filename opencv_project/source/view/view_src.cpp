@@ -18,13 +18,14 @@ void ViewSrc::showFrame(cv::Mat frame) {
 	cv::Mat resizeFrame;
 	//	Resizes image up to or down to the specified size
 	cv::resize(frame, resizeFrame, cv::Size(WIDTH_RESIZED_FRAME, HEIGHT_RESIZED_FRAME));
+
+	int axY = 15;
 	//	Loop for all elements in vector with key descriptions
 	for (int i = 0; i < _keyDescription.size(); i++) {
-		//	Loop for all elements in vector with coordinates of key descriptions 
-		for (int j = 0; j < data.size(); j++) {
 			//	Puts text strings of key descriptions on frame
-			putText(resizeFrame, _keyDescription[j], data[j], cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), 2);
-		}
+			putText(resizeFrame, _keyDescription[i], cv::Point(0, axY), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), 2);
+			//
+			axY += 20;
 	}
 	//	Displays image in a specified window
 	cv::imshow(_winName, resizeFrame);
