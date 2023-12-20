@@ -8,8 +8,6 @@ class Data {
 protected:
 	//	Img object
 	cv::Mat _img;
-	//
-	bool _ready;
 
 public:
 	// Virtual function returns image

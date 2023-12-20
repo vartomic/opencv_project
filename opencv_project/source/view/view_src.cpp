@@ -23,7 +23,8 @@ void ViewSrc::showFrame(cv::Mat frame) {
 	//	Loop for all elements in vector with key descriptions
 	for (int i = 0; i < _keyDescription.size(); i++) {
 			//	Puts text strings of key descriptions on frame
-			putText(resizeFrame, _keyDescription[i], cv::Point(0, axY), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), 2);
+			putText(resizeFrame, _keyDescription[i], cv::Point(0, axY), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 0, 0), 2, cv::LINE_AA);
+			putText(resizeFrame, _keyDescription[i], cv::Point(0, axY), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), 1, cv::LINE_AA);
 			//	Next string will be placed lower on 20 points
 			axY += 20;
 	}
