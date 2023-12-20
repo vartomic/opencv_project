@@ -30,7 +30,6 @@ Data* DataFactory::getData(enum TypeData type){
             //  Allocate memory for new video
             dataVideo = new DataVideo();
         }
-        dataVideo->setFlag(true);
         //  Pointer calls DataVideo class function nextVideo
         dataVideo->nextVideo();
         //  Returns photo

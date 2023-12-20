@@ -16,7 +16,10 @@ class Controller {
 	Controller() {}
 	//	Static instance of the controller
 	static Controller* controllerInstance;
-
+	//
+	bool _newData;
+	//
+	bool _newModel;
 public:
 	//	Function allocates memory for new Controller instance if there is none existing instances and returns pointer to that instance
 	static Controller& getInstance();
@@ -32,6 +35,8 @@ public:
 	//	Function sets model object to controller. Input of function is pointer to model object from Model class, 
 	//	controller assigns it to model object in controller class
 	void setModel(Model* model);
+
+	bool getDataFlag();
 	//	Function gets datatype, modeltype, resize image for specified window, 
 	// sets slider values of the trackbar and displays them inside the window
 	void work();

@@ -4,8 +4,6 @@
 namespace fs = std::filesystem;
 
 cv::Mat DataVideo::getData() {
-	//	Changes position of the flag
-	setFlag(false);
 	cv::Mat frame;
 	// Read the current frame
 	_videoFrame.read(frame);
@@ -33,7 +31,6 @@ void DataVideo::nextVideo() {
 	if (!_videoFrame.isOpened()) {
 		std::cout << "Video is missing" << std::endl;
 	}
-	setFlag(true);
 	//	Index increases on 1
 	_curVideoIndex++;
 	//	If current index of array greater than size of array current index equalizes to 0

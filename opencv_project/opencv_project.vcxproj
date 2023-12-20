@@ -137,7 +137,6 @@
   <ItemGroup>
     <ClCompile Include="opencv_project.cpp" />
     <ClCompile Include="source\controller\controller.cpp" />
-    <ClCompile Include="source\data\data.cpp" />
     <ClCompile Include="source\data\data_factory.cpp" />
     <ClCompile Include="source\data\data_photo.cpp" />
     <ClCompile Include="source\data\data_camera.cpp" />

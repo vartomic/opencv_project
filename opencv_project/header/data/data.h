@@ -16,8 +16,4 @@ public:
 	virtual cv::Mat getData() {
 		return _img;
 	}
-	// sets inner class variable _ready in flag position from derived class dataPhoto
-	void setFlag(bool ready);
-	//	returns flag position
-	bool getFlag();
 };

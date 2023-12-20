@@ -1,6 +1,7 @@
 #pragma once
 #include <opencv2/opencv.hpp>
 #include "data.h"
+#include "controller/controller.h"
 
 //	Derived from class Data, class DataPhoto iterates over the elements of a directory with images, 
 //	converts file paths in string and places them in a vector after checking if filepath is regular file.
@@ -10,10 +11,15 @@ class DataPhoto: public Data {
 	cv::Mat _imageFrame;
 	//	Index of image
 	int _curImageIndex = 0;
+	bool _ready;
 
 public:
 	//	Function changes position of a flag and returns image
 	cv::Mat getData();
 	//	Function reads path to image from array, then by pressing 'p' button changes image to the next
 	void nextImage();
+	//	Sets inner class variable _ready in flag position from derived class dataPhoto
+	void setFlag(bool ready);
+	//	Returns flag position
+	bool getFlag();
 };

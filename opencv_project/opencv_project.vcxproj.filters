@@ -54,9 +54,6 @@
     <ClCompile Include="source\model\model_dlib.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\data\data.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="source\data\data_video.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>

@@ -9,9 +9,6 @@ class ViewSrc {
 	int _winFlag;
 	//	Vector with descriptions of keys
 	std::vector<std::string> _keyDescription;
-	//	Vector with coordinates of keys descriptions
-	std::vector<cv::Point> data = { cv::Point(0, 15), cv::Point(0, 35), cv::Point(0, 55), cv::Point(0, 75),
-		cv::Point(0, 95), cv::Point(0, 115), cv::Point(0, 135) };
 
 public:
 	//	Empty constructor

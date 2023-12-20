@@ -16,6 +16,7 @@ Controller& Controller::getInstance() {
 
 void Controller::setData(Data* data) {
 	_data = data;
+	_newData = true;
 }
 
 void Controller::setView1(ViewSrc* view1) {
@@ -28,6 +29,11 @@ void Controller::setView2(ViewSrc* view2) {
 
 void Controller::setModel(Model* model) {
 	_model = model;
+	_newModel = true;
+}
+
+bool Controller::getDataFlag() {
+	return _newData;
 }
 
 void Controller::work() {
@@ -35,11 +41,17 @@ void Controller::work() {
 	if (_data == 0 || _model == 0) {
 		exit(0);
 	}
-	//	If data changes
-	if (_data->getFlag() == true) {
-		//	Resets counter of faces, total amount of ellapsed time and counter of proccesed frames in the model
+
+	if (_newData == true || _newModel == true) {
 		_model->reset();
+		_newData = false;
+		_newModel = false;
 	}
+	////If data changes
+	//if (_data->getFlag() == true) {
+	//		//Resets counter of faces, total amount of ellapsed time and counter of proccesed frames in the model
+	//	_model->reset();
+	//}
 	cv::Mat frame;
 	// Pointer to Data object of Controller class calls getData function. getData() returns image
 	frame = _data->getData();

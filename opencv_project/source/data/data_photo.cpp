@@ -3,6 +3,14 @@
 
 namespace fs = std::filesystem;
 
+void DataPhoto::setFlag(bool ready) {
+	_ready = ready;
+}
+
+bool DataPhoto::getFlag() {
+	return _ready;
+}
+
 cv::Mat DataPhoto::getData() {
 	if (getFlag() == false) {
 		return cv::Mat();
