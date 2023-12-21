@@ -1,7 +1,7 @@
 #include "view/view_src.h"
 
-void ViewSrc::getKeyDescription(std::vector<std::string> keyDescription) {
-	_keyDescription = keyDescription;
+void ViewSrc::getFrameText(std::vector<std::string> frameText) {
+	_frameText = frameText;
 }
 
 void ViewSrc::showFrame(cv::Mat frame) {
@@ -21,13 +21,14 @@ void ViewSrc::showFrame(cv::Mat frame) {
 	//	Y coordinate of text string 
 	int axY = 15;
 	//	Loop for all elements in vector with key descriptions
-	for (int i = 0; i < _keyDescription.size(); i++) {
-			//	Puts text strings of key descriptions on frame
-			putText(resizeFrame, _keyDescription[i], cv::Point(0, axY), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 0, 0), 2, cv::LINE_AA);
-			putText(resizeFrame, _keyDescription[i], cv::Point(0, axY), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 204, 102), 1, cv::LINE_AA);
-			//	Next string will be placed lower on 20 points
-			axY += 20;
+	for (int i = 0; i < _frameText.size(); i++) {
+		//	Puts text strings of key descriptions on frame
+		putText(resizeFrame, _frameText[i], cv::Point(0, axY), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 0, 0), 2, cv::LINE_AA);
+		putText(resizeFrame, _frameText[i], cv::Point(0, axY), cv::FONT_ITALIC, 0.5, cv::Scalar(0, 255, 0), 1, cv::LINE_AA);
+		//	Next string will be placed lower on 20 points
+		axY += 20;
 	}
+
 	//	Displays image in a specified window
 	cv::imshow(_winName, resizeFrame);
 }

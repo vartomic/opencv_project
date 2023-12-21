@@ -8,7 +8,7 @@ class ViewSrc {
 	//	Window size
 	int _winFlag;
 	//	Vector with descriptions of keys
-	std::vector<std::string> _keyDescription;
+	std::vector<std::string> _frameText;
 
 public:
 	//	Empty constructor
@@ -25,5 +25,5 @@ public:
 	//	Resizes image up to or down to the specified size and displays it in a specified window
 	void showFrame(cv::Mat frame);
 	//	Function receives buttons description and assignes them in ViewSrc class
-	void getKeyDescription(std::vector<std::string> keyDescription);
+	void getFrameText(std::vector<std::string> frameText);
 };

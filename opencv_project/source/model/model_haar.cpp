@@ -19,7 +19,7 @@ void HaarModel::drawRectangles(cv::Mat& image, std::vector<cv::Rect>& faces, int
         //  Draws rectangle using 4 rounded coordinates
         rectangle(image, cv::Point(cvRound(r.x), cvRound(r.y)),
             cv::Point(cvRound(r.x + r.width - 1), cvRound(r.y + r.height - 1)),
-           cv::Scalar(0, 164, 213), thickness);
+           cv::Scalar(0, 255, 255), thickness);
     }
 }
 

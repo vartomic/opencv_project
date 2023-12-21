@@ -41,17 +41,13 @@ void Controller::work() {
 	if (_data == 0 || _model == 0) {
 		exit(0);
 	}
-
+	//
 	if (_newData == true || _newModel == true) {
+		//
 		_model->reset();
 		_newData = false;
 		_newModel = false;
 	}
-	////If data changes
-	//if (_data->getFlag() == true) {
-	//		//Resets counter of faces, total amount of ellapsed time and counter of proccesed frames in the model
-	//	_model->reset();
-	//}
 	cv::Mat frame;
 	// Pointer to Data object of Controller class calls getData function. getData() returns image
 	frame = _data->getData();
@@ -59,6 +55,8 @@ void Controller::work() {
 	//	Pointer to Model object of Controller class calls process function. 
 	// process() function process the model according to chosen model type
 	frameFromModel = _model->process(frame);
+
+	auto v = _model->sendArray();
 	//	If view is not 0
 	if (_controllerView1 != 0)
 		//	Pointer to ViewSrc object of Controller class calls showFrame function with input image parameter.
@@ -66,6 +64,9 @@ void Controller::work() {
 		_controllerView1->showFrame(frame);	
 	//	If view is not 0
 	if (_controllerView2 != 0)
+		//
+		_controllerView2->getFrameText(v);
+		
 		//	Pointer to ViewSrc object of Controller class calls showFrame function with input image parameter.
 		//  Function showFrame(frame) returns image with window frame
 		_controllerView2->showFrame(frameFromModel);

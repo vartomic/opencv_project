@@ -6,7 +6,7 @@ void MTCNNModel::drawRectangles(cv::Mat& image, std::vector<Face>& faces, int th
         //  Finds all faces and receives a rectangle froom each face 
         auto rect = faces[i].bbox.getRect();
         //  Draws rectangle around face
-        rectangle(image, rect, cv::Scalar(255, 0, 255), thickness);
+        rectangle(image, rect, cv::Scalar(255, 0, 0), thickness);
     }  
 }
 

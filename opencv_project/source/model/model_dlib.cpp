@@ -7,7 +7,7 @@ void DlibModel::drawRectangles(cv::Mat& image, std::vector<dlib::rectangle>& fac
         dlib::rectangle r = faces[i];
         //  Draws rectangle using 4/  Function draws rectangles around faces, tickmeter receives fps value coordinates
         rectangle(image, cv::Point2i(r.left(), r.top()), cv::Point2i(r.right() + 1, r.bottom() + 1),
-            cv::Scalar(255, 255, 0), thickness);
+            cv::Scalar(0, 0, 255), thickness);
     }
 }
 
