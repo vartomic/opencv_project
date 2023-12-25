@@ -7,7 +7,7 @@ class ViewSrc {
 	std::string _winName;
 	//	Window size
 	int _winFlag;
-	//	Vector with descriptions of keys
+	//	Vector with the text, which will be placed on frame
 	std::vector<std::string> _frameText;
 
 public:

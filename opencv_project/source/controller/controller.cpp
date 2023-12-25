@@ -55,19 +55,20 @@ void Controller::work() {
 	//	Pointer to Model object of Controller class calls process function. 
 	// process() function process the model according to chosen model type
 	frameFromModel = _model->process(frame);
-
-	auto v = _model->sendArray();
+	//	Pointer to model instance calls function sendArray, which returns vector of string. Then vector assigned to variable frameText.
+	auto frameText = _model->sendArray();
 	//	If view is not 0
 	if (_controllerView1 != 0)
 		//	Pointer to ViewSrc object of Controller class calls showFrame function with input image parameter.
-		//  Function showFrame(frame) returns image with window frame
+		//  Function showFrame returns image with window frame
 		_controllerView1->showFrame(frame);	
 	//	If view is not 0
-	if (_controllerView2 != 0)
-		//
-		_controllerView2->getFrameText(v);
-		
+	if (_controllerView2 != 0) {
+		//	Pointer to ViewSrc object of Controller class calls getFrameText function with vector as input parameter.
+		//  Function getFrameText assigns vector of tring from Model class to Controller class.
+		_controllerView2->getFrameText(frameText);
 		//	Pointer to ViewSrc object of Controller class calls showFrame function with input image parameter.
-		//  Function showFrame(frame) returns image with window frame
+		//  Function showFrame returns image with window frame
 		_controllerView2->showFrame(frameFromModel);
+	}
 }

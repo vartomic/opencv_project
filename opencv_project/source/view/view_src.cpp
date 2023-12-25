@@ -28,7 +28,6 @@ void ViewSrc::showFrame(cv::Mat frame) {
 		//	Next string will be placed lower on 20 points
 		axY += 20;
 	}
-
 	//	Displays image in a specified window
 	cv::imshow(_winName, resizeFrame);
 }
