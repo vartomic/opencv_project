@@ -32,20 +32,18 @@ void Controller::setModel(Model* model) {
 	_newModel = true;
 }
 
-bool Controller::getDataFlag() {
-	return _newData;
-}
-
 void Controller::work() {
 	//	If data or model is not 0
 	if (_data == 0 || _model == 0) {
 		exit(0);
 	}
-	//
+	//	If type of data changed or model changed 
 	if (_newData == true || _newModel == true) {
-		//
+		//	Class Model resets counters of ellapsed time, score of processed frames and score of founded faces 
 		_model->reset();
+		//	Data changes flag
 		_newData = false;
+		//	Model changes flag
 		_newModel = false;
 	}
 	cv::Mat frame;
@@ -65,7 +63,7 @@ void Controller::work() {
 	//	If view is not 0
 	if (_controllerView2 != 0) {
 		//	Pointer to ViewSrc object of Controller class calls getFrameText function with vector as input parameter.
-		//  Function getFrameText assigns vector of tring from Model class to Controller class.
+		//  Function getFrameText assigns vector of string from Model class to Controller class.
 		_controllerView2->getFrameText(frameText);
 		//	Pointer to ViewSrc object of Controller class calls showFrame function with input image parameter.
 		//  Function showFrame returns image with window frame

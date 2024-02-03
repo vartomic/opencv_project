@@ -6,10 +6,10 @@ void HaarModel::detect(cv::Mat& image, std::vector<cv::Rect>& faces) {
     cvtColor(image, gray, cv::COLOR_BGR2GRAY);
     //  Equalizes the histogram of a grayscale image
     equalizeHist(gray, gray);
-    //  Detects selected object in the input image with given paramteres = input image, vector of faces, scalefactor,
+    //  Detects selected object in the input image with given parameters = input image, vector of faces, scalefactor,
     //  min amount of neighbours, min and max size of object 
     cascade.detectMultiScale(gray, faces,
-        1.1, 2, 0 | cv::CASCADE_SCALE_IMAGE, cv::Size(30, 30));
+        1.1, 2, cv::CASCADE_SCALE_IMAGE, cv::Size(30, 30));
 }
 
 void HaarModel::drawRectangles(cv::Mat& image, std::vector<cv::Rect>& faces, int thickness) {

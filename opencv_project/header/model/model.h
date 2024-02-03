@@ -23,5 +23,5 @@ public:
 	//	Function sends vector with strings to controller
 	std::vector<std::string> sendArray();
 	//	Renders text with fps value, number of processed frames, number of founded faces and ellapsed time in the input image
-	void visualize(cv::Mat& image, double fps, std::string modelName, int processedFrames, int totalFaceScore, double timeElapsed, int thickness = 2);
+	void visualize(cv::Mat& image, double fps, std::string modelName, int processedFrames, int totalFaceScore, double timeElapsed);
 };

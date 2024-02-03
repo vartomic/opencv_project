@@ -126,6 +126,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,7 +136,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="opencv_project.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="source\controller\controller.cpp" />
     <ClCompile Include="source\data\data_factory.cpp" />
     <ClCompile Include="source\data\data_photo.cpp" />
@@ -169,7 +170,6 @@
     <ClInclude Include="header\model\model.h" />
     <ClInclude Include="header\model\model_factory.h" />
     <ClInclude Include="header\model\model_mtcnn.h" />
-    <ClInclude Include="header\view\view.h" />
     <ClInclude Include="header\view\view_src.h" />
   </ItemGroup>
   <ItemGroup>

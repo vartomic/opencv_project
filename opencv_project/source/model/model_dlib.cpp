@@ -16,22 +16,22 @@ cv::Mat DlibModel::process(cv::Mat frame) {
     if (frame.empty()) {
         return cv::Mat();
     }
+    //  Creates a clone of an input image
+    cv::Mat image = frame.clone();
     //  Tickmeter measures passed time
     cv::TickMeter tm;
     //  Tickmeter starts
     tm.start();
-    //  Creates a clone of an input image
-    cv::Mat image = frame.clone();
     //  Converts mat to dlib image
     dlib::cv_image<dlib::bgr_pixel> dlibImage(image);
     // Detects faces 
     faces = detector(dlibImage);
     //  Number of founded faces resides in rows of matrix faces. _totalFaceScore adds that number to itself
     _totalFaceScore += faces.size();
-    //  Tickmeter stops
-    tm.stop();    
     //  Counter of processed frames increments
     _processedFrames++;
+    //  Tickmeter stops
+    tm.stop();    
     //  _totalTime sums to itself number of milliseconds spent on each frame
     _totalTime += tm.getTimeMilli();
     //  Function draws rectangles around faces and landmarks on faces, tickmeter receives fps value

@@ -1,4 +1,4 @@
-#include "model/model_dnn.h"
+             #include "model/model_dnn.h"
 
 void DNNModel::drawRectangles(cv::Mat & image, cv::Mat & faces, int thickness){  
     //  For i = 0 to the last row of faces
@@ -13,12 +13,12 @@ cv::Mat DNNModel::process(cv::Mat frame) {
     if (frame.empty()) {
         return cv::Mat();
     }
+    //  Creates a clone of an input image
+    cv::Mat image = frame.clone();
     //  Tickmeter measures passed time
     cv::TickMeter tm;
     //  Tickmeter starts
     tm.start();
-    //  Creates a clone of an input image
-    cv::Mat image = frame.clone();
     //  Sets input size before inference
     detector->setInputSize(image.size());
     cv::Mat faces;
@@ -26,10 +26,10 @@ cv::Mat DNNModel::process(cv::Mat frame) {
     detector->detect(image, faces);
     //  Number of founded faces resides in rows of matrix faces. _totalFaceScore adds that number to itself
     _totalFaceScore += faces.rows;
-    //  Tickmeter stops
-    tm.stop();
     //  Counter of processed frames increments
     _processedFrames++;
+    //  Tickmeter stops
+    tm.stop();
     //  _totalTime sums to itself number of milliseconds spent on each frame
     _totalTime += tm.getTimeMilli();
     //  Function draws rectangles around faces and landmarks on faces, tickmeter receives fps value

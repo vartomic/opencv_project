@@ -11,8 +11,6 @@ class ViewSrc {
 	std::vector<std::string> _frameText;
 
 public:
-	//	Empty constructor
-	ViewSrc() {};
 	//	Constructor with window name and window size as input arguments
 	ViewSrc(const std::string winName, int flag) {
 		//	Class window name = function argument window name

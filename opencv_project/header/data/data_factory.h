@@ -1,6 +1,6 @@
 #pragma once
 #include "data.h"
-//
+
 class DataFactory {
 
 public:

@@ -1,4 +1,4 @@
-  #pragma once
+#pragma once
 #include <opencv2/opencv.hpp>
 #include "model/model.h"
 
@@ -6,7 +6,6 @@ class HaarModel : public Model {
 	public:
 		//	Cascade for searching item in image
 		cv::CascadeClassifier cascade;
-
 		//	Cascade path name
 		std::string cascadeName = "./haarcascades/haarcascade_frontalface_alt2.xml";
 		//	Vector for faces

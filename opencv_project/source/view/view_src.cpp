@@ -9,7 +9,7 @@ void ViewSrc::showFrame(cv::Mat frame) {
 	if (frame.empty()) {
 		return;
 	}
-	//aspect ratio = rows of window frame divides on columns of window frame and converts to float
+	//	Aspect ratio = rows of window frame divides on columns of window frame and converts to float
 	const float ASPECT_YX = (float)frame.rows / frame.cols;
 	//	Width of window frame
 	const int WIDTH_RESIZED_FRAME = 800;

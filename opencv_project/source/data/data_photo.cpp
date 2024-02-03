@@ -25,17 +25,17 @@ void DataPhoto::nextImage() {
 	//	Path to images
 	const std::string IMG_PATH = "img/faces/";
 	//	Vector for images
-	std::vector<cv::String> vectorOfimg;
+	std::vector<cv::String> vectorOfImg;
 	//	fs::path represents paths on a filesystem
 	//	directory_iterator iterates over the elements of a directory (but does not visit the subdirectories)
 	for (const fs::path& p : fs::directory_iterator(IMG_PATH)) {
 		if (fs::is_regular_file(p)) {
 			//	File paths are being converted in string and placed in a vector
-			vectorOfimg.push_back(p.string());
+			vectorOfImg.push_back(p.string());
 		}
 	}
 	//	Reads img
-	_imageFrame = cv::imread(vectorOfimg[_curImageIndex]);
+	_imageFrame = cv::imread(vectorOfImg[_curImageIndex]);
 	//	If not data
 	if (!_imageFrame.data) {
 		std::cout << "Image is missing" << std::endl;
@@ -44,7 +44,7 @@ void DataPhoto::nextImage() {
 	//	Index increases on 1
 	_curImageIndex++;
 	//	If current index of array greater than size of array current index equalizes to 0
-	if (_curImageIndex >= vectorOfimg.size()) {
+	if (_curImageIndex >= vectorOfImg.size()) {
 		_curImageIndex = 0;
 	}
 }
