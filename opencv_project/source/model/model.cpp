@@ -10,7 +10,7 @@ std::vector<std::string> Model::sendArray() {
     return _frameText;
 }
 
-void Model::visualize(cv::Mat& image, double fps, std::string modelName, int processedFrames, int totalFaceScore, double timeElapsed) {
+void Model::visualize(cv::Mat& image, double fps, int processedFrames, int totalFaceScore, double timeElapsed) {
     //  Text string with fps value formatted from double to float
     std::string fpsStr = cv::format("FPS : %.2f", (float)fps);
     //  Receives the width of input image
@@ -32,5 +32,5 @@ void Model::visualize(cv::Mat& image, double fps, std::string modelName, int pro
     _frameText.push_back(resolutionStr);
     _frameText.push_back(processedFramesStr);
     _frameText.push_back(faceScoreStr);
-    _frameText.push_back(timeElapsedStr);
+    _frameText.push_back(timeElapsedStr);   
 }

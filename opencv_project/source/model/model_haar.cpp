@@ -46,7 +46,7 @@ cv::Mat HaarModel::process(cv::Mat frame) {
     _totalTime += tm.getTimeMilli();
     drawRectangles(image, faces);
     //  Function draws rectangles around faces, tickmeter receives fps value
-    visualize(image, tm.getFPS(), "Haar Cascades", _processedFrames, _totalFaceScore, _totalTime);
+    visualize(image, tm.getFPS(), _processedFrames, _totalFaceScore, _totalTime);
     //  Returns processed image
 	return image;
 }

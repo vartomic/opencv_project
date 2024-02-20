@@ -35,7 +35,7 @@ cv::Mat DNNModel::process(cv::Mat frame) {
     //  Function draws rectangles around faces and landmarks on faces, tickmeter receives fps value
     drawRectangles(image, faces);
     //	Renders text with fps value, number of processed frames, number of founded faces and ellapsed time in the input image  
-    visualize(image, tm.getFPS(), "DNN", _processedFrames, _totalFaceScore, _totalTime);
+    visualize(image, tm.getFPS(), _processedFrames, _totalFaceScore, _totalTime);
     //  Returns processed image
     return image;
 }
